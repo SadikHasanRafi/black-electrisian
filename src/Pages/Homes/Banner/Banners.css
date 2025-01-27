@@ -1,0 +1,87 @@
+.hero-section {
+    /* position: relative; */
+    background-image: url("https://img.freepik.com/premium-photo/different-electrical-tools-equipment-grey-background-top-view_106035-1335.jpg?w=2000");
+    height: 80vh;
+    /* width:80vh; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* z-index: 1; */
+  }
+.hero-section2 {
+    /* position: relative; */
+    background-image: url("https://img.freepik.com/free-photo/different-electrical-tools-wooden-background-flat-lay_169016-25060.jpg");
+    height: 80vh;
+    /* width:80vh; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* z-index: 1; */
+  }
+.hero-section3 {
+    /* position: relative; */
+    background-image: url("https://img.freepik.com/free-photo/different-electrical-tools-digital-tablet-wooden-background-flat-lay_169016-24603.jpg");
+    height: 80vh;
+    /* width:80vh; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* z-index: 1; */
+  }
+ 
+  .hero-section::befor{
+    /* position: absolute; */
+    content:"";
+    background-color: black;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    opacity: .7;
+    /* z-index: -1; */
+  }
+
+
+  .mouses{
+    /* grid-template-columns: repeat(3,1fr); */
+    display: flex;
+   }
+   
+   .keys{
+       /* background-color:darkcyan; */
+       margin-top: -8px;
+   }
+   
+   .mouses i{
+       color:white;
+       font-size: 35px;
+   }
+   /* .laptops i{
+       color:white;
+       font-size: 25px;
+   } */
+   .dell{
+       background-color: white;
+       background-image: url("https://img.freepik.com/premium-photo/electrician-tools-wooden-table_392895-27019.jpg");
+   }
+   .dellss{
+       background-color: white;
+       background-image: url("https://img.freepik.com/premium-photo/electrician-tools-wooden-table_392895-27019.jpg");
+   }
+   
+   
+   
+   .dells{
+       background-color: #1f2833;
+       background-image: url('https://img.freepik.com/premium-photo/electrician-tools-wooden-table_392895-27019.jpg');
+       color:white;
+       /* padding:7px; */
+   }
+   /* 1f2833 */
+   .stand-bg{
+       background-color:floralwhite;
+      
+       margin-bottom: 70px;
+   }
+   .dones{
+       color:white;
+   }
