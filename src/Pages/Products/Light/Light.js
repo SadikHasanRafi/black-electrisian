@@ -82,7 +82,7 @@ const Light = () => {
     
 
     const fetchData = () => {
-      fetch('http://localhost:5000/products')
+      fetch('https://black-electrisian.onrender.com/products')
       .then(res => res.json())
       .then(data => {
           setQuestions(data.allData)
@@ -101,7 +101,7 @@ const Light = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://black-electrisian.onrender.com/products')
         .then(res=>res.json())
         .then(data=>setModel(data.allData))
     },[])
@@ -109,7 +109,7 @@ const Light = () => {
 
     // like 
     const handleLike = (id) => {
-      fetch(`http://localhost:5000/like/${id}`, {
+      fetch(`https://black-electrisian.onrender.com/like/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(userData)
@@ -128,7 +128,7 @@ const Light = () => {
   
     }
     const handleUnLike = (id) => {
-      fetch(`http://localhost:5000/unlike/${id}`, {
+      fetch(`https://black-electrisian.onrender.com/unlike/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(userData)

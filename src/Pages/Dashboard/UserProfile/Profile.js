@@ -11,7 +11,7 @@ const Profile = () => {
     const [userInfo, setUserInfo] = useState({})
 
     useEffect(() => {
-        fetch(`http://localhost:5000/updateUser/${user.email}`)
+        fetch(`https://black-electrisian.onrender.com/updateUser/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setUserInfo(data)

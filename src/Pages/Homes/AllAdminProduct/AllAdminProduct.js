@@ -87,7 +87,7 @@ const AllAdminProduct = () => {
         setPage(data.selected);
     }
     const fetchData = () => {
-        fetch(`http://localhost:5000/adminsproducts?page=${page}&&categories=${categories}&&sizing=${sizing}&&warrenty=${warrenty}&&material=${material}&&size=${size}`)
+        fetch(`https://black-electrisian.onrender.com/adminsproducts?page=${page}&&categories=${categories}&&sizing=${sizing}&&warrenty=${warrenty}&&material=${material}&&size=${size}`)
         .then(res => res.json())
         .then(data => {
             setQuestions(data.allData)
@@ -112,7 +112,7 @@ const AllAdminProduct = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/adminsproducts')
+        fetch('https://black-electrisian.onrender.com/adminsproducts')
         .then(res=>res.json())
         .then(data=>setModel(data.allData))
     },[])

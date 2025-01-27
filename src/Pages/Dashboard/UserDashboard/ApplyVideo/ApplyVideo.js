@@ -23,7 +23,7 @@ const ApplyVideo = () => {
        
      
 
-        fetch("http://localhost:5000/videoApply", {
+        fetch("https://black-electrisian.onrender.com/videoApply", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

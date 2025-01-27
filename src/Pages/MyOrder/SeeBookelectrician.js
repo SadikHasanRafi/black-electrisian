@@ -9,7 +9,7 @@ const SeeBookelectrician = () => {
 // const email=user?.email
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/mybookElectrician/${user?.email}`)
+        fetch(`https://black-electrisian.onrender.com/mybookElectrician/${user?.email}`)
         .then(res=>res.json())
         .then(data=>{
             setService(data)
@@ -18,7 +18,7 @@ const SeeBookelectrician = () => {
 
     const handleDelete=(id)=>{
         const proceed=window.confirm('are you sure, you want to delete');
-        fetch(`http://localhost:5000/electricianmanageAllOrderDelete/${id}`,{
+        fetch(`https://black-electrisian.onrender.com/electricianmanageAllOrderDelete/${id}`,{
             method:'DELETE'
         }).then(res=>res.json())
         .then(data=>{

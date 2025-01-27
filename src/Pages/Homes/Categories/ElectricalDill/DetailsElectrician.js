@@ -60,7 +60,7 @@ const DetailsElectrician = () => {
   const [isFetched, setIsFetched] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/ElectricianDetail/${id}`)
+    fetch(`https://black-electrisian.onrender.com/ElectricianDetail/${id}`)
       .then((res) => res.json())
       .then((data) => setBook(data));
   }, [id]);
@@ -77,7 +77,7 @@ const DetailsElectrician = () => {
     console.log(data);
     data.userEmail = user.email
 
-    fetch("http://localhost:5000/bookElectrician", {
+    fetch("https://black-electrisian.onrender.com/bookElectrician", {
       method: "POST",
       headers: {
         "content-type": "application/json",

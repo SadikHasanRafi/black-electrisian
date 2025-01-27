@@ -41,7 +41,7 @@ const BookingModal = ({open,handleClose,booking,date}) => {
         date:date.toLocaleDateString()
       }
       // console.log(appointments)
-      fetch('http://localhost:5000/appointments ', {
+      fetch('https://black-electrisian.onrender.com/appointments ', {
         method:'post',
         headers:{
           'content-type':'application/json'

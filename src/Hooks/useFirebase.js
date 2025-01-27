@@ -125,7 +125,7 @@ const registerUser = (email, password, name,client,profession,choose,address,pho
   // save user to database 
   const sendUser = (email, displayName,client,profession,choose,address,phone,method) => {
     const user = { email, displayName,client, profession,choose,address,phone };
-    fetch('http://localhost:5000/users', {
+    fetch('https://black-electrisian.onrender.com/users', {
       method: method,
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user)
@@ -151,7 +151,7 @@ const registerUser = (email, password, name,client,profession,choose,address,pho
 
   // buyer CONDITIONAL DATALOAD
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://black-electrisian.onrender.com/users/${user.email}`)
       .then(res => res.json())
       .then(data => {
         setBuyer(data?.buyer)
@@ -159,7 +159,7 @@ const registerUser = (email, password, name,client,profession,choose,address,pho
   }, [user.email])
   // doctor CONDITIONAL DATALOAD
   useEffect(() => {
-    fetch(`http://localhost:5000/usersdatas/${user.email}`)
+    fetch(`https://black-electrisian.onrender.com/usersdatas/${user.email}`)
       .then(res => res.json())
       .then(data => {
         setDoctor(data?.doctor)
@@ -168,7 +168,7 @@ const registerUser = (email, password, name,client,profession,choose,address,pho
 
 //  admin role the database 
  useEffect(()=>{
-  fetch(`http://localhost:5000/userLogin/${user.email}`)
+  fetch(`https://black-electrisian.onrender.com/userLogin/${user.email}`)
   .then(res=>res.json())
   .then(data=>setAdmin(data?.admin))
 },[user.email])

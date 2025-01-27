@@ -18,7 +18,7 @@ const Electrician = () => {
         // data.status = 'Pending'
      
 
-        fetch("http://localhost:5000/electricianupload", {
+        fetch("https://black-electrisian.onrender.com/electricianupload", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

@@ -22,7 +22,7 @@ const BuyerUploadProduct = () => {
         // data.status = 'Pending'
      
 
-        fetch("http://localhost:5000/PostUploadBuyer", {
+        fetch("https://black-electrisian.onrender.com/PostUploadBuyer", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

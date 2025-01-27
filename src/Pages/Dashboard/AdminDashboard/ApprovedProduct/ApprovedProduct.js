@@ -23,7 +23,7 @@ const ApprovedData = () => {
     const [status, setStatus] = useState('')
 
     useEffect(()=>{
-        fetch('http://localhost:5000/my')
+        fetch('https://black-electrisian.onrender.com/my')
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
@@ -33,7 +33,7 @@ const ApprovedData = () => {
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/updateStatus/${id}`, {
+        fetch(`https://black-electrisian.onrender.com/updateStatus/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),
@@ -55,7 +55,7 @@ const ApprovedData = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/manageAllOrderDelete/${id}`)
+                axios.delete(`https://black-electrisian.onrender.com/manageAllOrderDelete/${id}`)
                     .then((response) => {
                         response.status === 204 &&
                             Swal.fire(

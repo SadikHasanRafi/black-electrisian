@@ -26,7 +26,7 @@ const DoctorPayment = () => {
     } = useForm();
 
     useEffect(()=>{
-       fetch(`http://localhost:5000/appointments/${appointmentId}`)
+       fetch(`https://black-electrisian.onrender.com/appointments/${appointmentId}`)
        .then(res=>res.json())
        .then(data=>setPayment(data))
     },[appointmentId])
@@ -42,7 +42,7 @@ const DoctorPayment = () => {
       time:time
      }
       // console.log(order);
-      fetch(`http://localhost:5000/initPost`, {
+      fetch(`https://black-electrisian.onrender.com/initPost`, {
         method:'POST',
         headers:{
           'content-type':'application/json'
@@ -66,7 +66,7 @@ const DoctorPayment = () => {
     //     status: "Pending",
     //   };
     //   axios
-    //     .post('http://localhost:5000/initvalue', paymentData)
+    //     .post('https://black-electrisian.onrender.com/initvalue', paymentData)
     //     .then((res) => {
     //       window.location.replace(res?.data);
     //       // localStorage.removeItem('productCart');

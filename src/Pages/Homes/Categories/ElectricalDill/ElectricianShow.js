@@ -83,7 +83,7 @@ const ElectricianShow = () => {
 
 
   const fetchData = () => {
-    fetch('http://localhost:5000/showElectrician')
+    fetch('https://black-electrisian.onrender.com/showElectrician')
       .then(res => res.json())
       .then(data => {
         setQuestions(data)
@@ -102,7 +102,7 @@ const ElectricianShow = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:5000/showElectrician')
+    fetch('https://black-electrisian.onrender.com/showElectrician')
       .then(res => res.json())
       .then(data => setModel(data))
   }, [])

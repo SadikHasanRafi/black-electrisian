@@ -23,7 +23,7 @@ const AddProduct = () => {
 
         console.log(formData)
 
-        fetch('http://localhost:5000/PostUploadBuyer',{
+        fetch('https://black-electrisian.onrender.com/PostUploadBuyer',{
             method:"POST",
             body:formData
         })

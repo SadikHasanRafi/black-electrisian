@@ -58,7 +58,7 @@ import Swal from "sweetalert2";
     const [isFetched, setIsFetched] = useState(0);
   
     useEffect(() => {
-      fetch(`http://localhost:5000/adminsproduct/${id}`)
+      fetch(`https://black-electrisian.onrender.com/adminsproduct/${id}`)
         .then((res) => res.json())
         .then((data) => setBook(data));
     }, [id]);

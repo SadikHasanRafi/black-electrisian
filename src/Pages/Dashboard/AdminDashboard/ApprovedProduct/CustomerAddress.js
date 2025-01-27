@@ -15,7 +15,7 @@ const CustomerAddress = ({ order, handleDelete }) => {
     const [status, setStatus] = useState('')
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/updateStatusdata/${id}`, {
+        fetch(`https://black-electrisian.onrender.com/updateStatusdata/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

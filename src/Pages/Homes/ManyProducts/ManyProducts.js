@@ -98,7 +98,7 @@ const ManyProducts = () => {
     // }, [type, year, code, page]);
 
     const fetchData = () => {
-      fetch('http://localhost:5000/ValueUpdates')
+      fetch('https://black-electrisian.onrender.com/ValueUpdates')
       .then(res => res.json())
       .then(data => {
           setQuestions(data)
@@ -157,7 +157,7 @@ const ManyProducts = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/ValueUpdates')
+        fetch('https://black-electrisian.onrender.com/ValueUpdates')
         .then(res=>res.json())
         .then(data=>setModel(data))
     },[])

@@ -40,7 +40,7 @@ reset();
   const onSubmit = data => {
 
 
-    fetch("http://localhost:5000/contactus", {
+    fetch("https://black-electrisian.onrender.com/contactus", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(data),

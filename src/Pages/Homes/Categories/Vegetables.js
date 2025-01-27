@@ -85,7 +85,7 @@ const Vegetable = () => {
    
 
     const fetchData = () => {
-      fetch('http://localhost:5000/products')
+      fetch('https://black-electrisian.onrender.com/products')
       .then(res => res.json())
       .then(data => {
           setQuestions(data.allData)
@@ -104,7 +104,7 @@ const Vegetable = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://black-electrisian.onrender.com/products')
         .then(res=>res.json())
         .then(data=>setModel(data.allData))
     },[])
@@ -112,7 +112,7 @@ const Vegetable = () => {
 
     // like 
     const handleLike = (id) => {
-      fetch(`http://localhost:5000/like/${id}`, {
+      fetch(`https://black-electrisian.onrender.com/like/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(userData)
@@ -131,7 +131,7 @@ const Vegetable = () => {
   
     }
     const handleUnLike = (id) => {
-      fetch(`http://localhost:5000/unlike/${id}`, {
+      fetch(`https://black-electrisian.onrender.com/unlike/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(userData)

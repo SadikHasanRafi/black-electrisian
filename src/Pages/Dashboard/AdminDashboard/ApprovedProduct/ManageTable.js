@@ -16,7 +16,7 @@ const ManageTable = (props) => {
 
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/QuestionStatusUpdate/${id}`, {
+        fetch(`https://black-electrisian.onrender.com/QuestionStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ statu}),

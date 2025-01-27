@@ -15,7 +15,7 @@ const AdminProductUpload = () => {
        
      
 
-        fetch("http://localhost:5000/PostUploadAdmin", {
+        fetch("https://black-electrisian.onrender.com/PostUploadAdmin", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

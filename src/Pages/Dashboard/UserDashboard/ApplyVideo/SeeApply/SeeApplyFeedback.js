@@ -38,7 +38,7 @@ const SeeApplyFeedback = () => {
     //   },[])
 
     const fetchData = () => {
-      fetch(`http://localhost:5000/feedback/${user.email}`)
+      fetch(`https://black-electrisian.onrender.com/feedback/${user.email}`)
         .then(res => res.json())
         // .then(data => setWork(data))
         .then(data => {
@@ -74,7 +74,7 @@ const SeeApplyFeedback = () => {
 
 
     const handleLike = (id) => {
-      fetch(`http://localhost:5000/like/${id}`, {
+      fetch(`https://black-electrisian.onrender.com/like/${id}`, {
         method: "PUT",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(userData)

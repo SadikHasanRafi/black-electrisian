@@ -11,7 +11,7 @@ const ShowBlog = () => {
 // const email=user?.email
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/showBlog`)
+        fetch(`https://black-electrisian.onrender.com/showBlog`)
         .then(res=>res.json())
         .then(data=>{
             setService(data)

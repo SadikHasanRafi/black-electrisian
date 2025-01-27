@@ -68,7 +68,7 @@ const handleClose = () => setOpen(false);
       status: "Pending",
     };
     axios
-      .post('http://localhost:5000/init', paymentData)
+      .post('https://black-electrisian.onrender.com/init', paymentData)
       .then((res) => {
         window.location.replace(res?.data);
         localStorage.removeItem('productCart');
@@ -87,7 +87,7 @@ const handleClose = () => setOpen(false);
   }, []);
 
   const fetchData = () => {
-    fetch('http://localhost:5000/postBuyer')
+    fetch('https://black-electrisian.onrender.com/postBuyer')
       .then(res => res.json())
       // .then(data => setWork(data))
       .then(data => {

@@ -57,7 +57,7 @@ const BuyerProducts = () => {
     //   },[])
 
     const fetchData = () => {
-      fetch('http://localhost:5000/ValueUpdates')
+      fetch('https://black-electrisian.onrender.com/ValueUpdates')
         .then(res => res.json())
         // .then(data => setWork(data))
         .then(data => {

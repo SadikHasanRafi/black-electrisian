@@ -36,7 +36,7 @@ const ContactUs = () => {
     //   },[])
 
     const fetchData = () => {
-      fetch('http://localhost:5000/contactus')
+      fetch('https://black-electrisian.onrender.com/contactus')
         .then(res => res.json())
         // .then(data => setWork(data))
         .then(data => {

@@ -83,7 +83,7 @@ const Fan = () => {
     
 
     const fetchData = () => {
-      fetch('http://localhost:5000/products')
+      fetch('https://black-electrisian.onrender.com/products')
       .then(res => res.json())
       .then(data => {
           setQuestions(data.allData)
@@ -102,7 +102,7 @@ const Fan = () => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://black-electrisian.onrender.com/products')
         .then(res=>res.json())
         .then(data=>setModel(data.allData))
     },[])

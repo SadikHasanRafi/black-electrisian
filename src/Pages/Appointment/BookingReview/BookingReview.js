@@ -48,7 +48,7 @@ const BookingReview = ({opens,handleCloses,booking,date}) => {
         date:date.toLocaleDateString()
       }
       // console.log(appointments)
-      fetch('http://localhost:5000/postReview ', {
+      fetch('https://black-electrisian.onrender.com/postReview ', {
         method:'post',
         headers:{
           'content-type':'application/json'

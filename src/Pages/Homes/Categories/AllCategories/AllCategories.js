@@ -78,7 +78,7 @@ const AllCategories = () => {
     setPage(data.selected);
   }
   const fetchData = () => {
-    fetch(`http://localhost:5000/products?page=${page}&&categories=${categories}&&sizing=${sizing}&&warrenty=${warrenty}&&material=${material}&&size=${size}`)
+    fetch(`https://black-electrisian.onrender.com/products?page=${page}&&categories=${categories}&&sizing=${sizing}&&warrenty=${warrenty}&&material=${material}&&size=${size}`)
       .then(res => res.json())
       .then(data => {
         setQuestions(data.allData)
@@ -102,7 +102,7 @@ const AllCategories = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('https://black-electrisian.onrender.com/products')
       .then(res => res.json())
       .then(data => setModel(data.allData))
   }, [])

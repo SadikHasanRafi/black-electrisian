@@ -20,7 +20,7 @@ const CheckEmail = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/adminConfarmadmin`)
+        fetch(`https://black-electrisian.onrender.com/adminConfarmadmin`)
             .then((res) => res.json())
             .then((data) => setQuestions(data));
             // console.log(data)
@@ -34,7 +34,7 @@ const CheckEmail = () => {
     const handleDelete=(id)=>{
         const proceed=window.confirm('are you sure, you want to delete');
         if(proceed){
-            fetch(`http://localhost:5000/deleteUser/${id}`,{
+            fetch(`https://black-electrisian.onrender.com/deleteUser/${id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())
@@ -54,7 +54,7 @@ const CheckEmail = () => {
 // let value=question.drivelink;
 
     const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/QuestionStatusUpdate/${id}`, {
+        fetch(`https://black-electrisian.onrender.com/QuestionStatusUpdate/${id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ status }),

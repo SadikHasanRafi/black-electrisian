@@ -81,7 +81,7 @@ const AvailableAppointment = ({date}) => {
         setPage(data.selected);
     }
     const fetchData = () => {
-        fetch(`http://localhost:5000/doctorUpload?page=${page}&&size=${size}&&location=${location}`)
+        fetch(`https://black-electrisian.onrender.com/doctorUpload?page=${page}&&size=${size}&&location=${location}`)
         .then(res => res.json())
         .then(data => {
             setQuestions(data.allQuestions)
@@ -96,7 +96,7 @@ const AvailableAppointment = ({date}) => {
       }, [specialist, page,size,location,warrenty,material,size])
 
       useEffect(()=>{
-        fetch('http://localhost:5000/doctorUpload')
+        fetch('https://black-electrisian.onrender.com/doctorUpload')
         .then(res=>res.json())
         .then(data=>setModel(data.allQuestions))
     },[])

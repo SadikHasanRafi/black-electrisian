@@ -12,7 +12,7 @@ const BlogRobotics = () => {
 
         
       
-        fetch("http://localhost:5000/blogrobot", {
+        fetch("https://black-electrisian.onrender.com/blogrobot", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

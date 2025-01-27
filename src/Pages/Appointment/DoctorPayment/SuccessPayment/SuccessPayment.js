@@ -14,7 +14,7 @@ const SuccessPayment = () => {
     const [product, setProduct] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/ordersdata/${id}`)
+        fetch(`https://black-electrisian.onrender.com/ordersdata/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -28,7 +28,7 @@ const SuccessPayment = () => {
             tran_id: id,
             val_id: product?.val_id
         }
-        axios.post(`http://localhost:5000/validateData`, datas)
+        axios.post(`https://black-electrisian.onrender.com/validateData`, datas)
             .then(res => {
                 console.log(res.data)
                 if (res.data) {

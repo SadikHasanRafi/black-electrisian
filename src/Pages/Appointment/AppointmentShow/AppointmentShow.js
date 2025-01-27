@@ -16,7 +16,7 @@ const AppointmentShow = ({date}) => {
     const [userAppointment,setUserAppointment]=useState([])
 
     useEffect(()=>{
-        const url=`http://localhost:5000/appointments?email=${user.email}&date=${date.toLocaleDateString()}`
+        const url=`https://black-electrisian.onrender.com/appointments?email=${user.email}&date=${date.toLocaleDateString()}`
         fetch(url)
         .then(res=>res.json())
         .then(data=>{
