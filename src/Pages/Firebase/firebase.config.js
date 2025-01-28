@@ -1,10 +1,9 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyD4ysFYLih-WZEDBXTYP2gv8GfhiWQn_1w",
-  authDomain: "black-99f54.firebaseapp.com",
-  projectId: "black-99f54",
-  storageBucket: "black-99f54.appspot.com",
-  messagingSenderId: "997366553417",
-  appId: "1:997366553417:web:298b4516b5466e63c21898",
-  measurementId: "G-9Y8P7F313M"
-  };
+  apiKey: "AIzaSyB2O0ot8R7VLqS1YCghEwWtiWiRnsgevsQ",
+  authDomain: "black-electrician.firebaseapp.com",
+  projectId: "black-electrician",
+  storageBucket: "black-electrician.firebasestorage.app",
+  messagingSenderId: "763684470391",
+  appId: "1:763684470391:web:9f422e6450fa058cf99072"
+};
   export default firebaseConfig;
