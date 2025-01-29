@@ -67,7 +67,7 @@ function NewDashboard(props) {
         <div style={{backgroundColor:"#032831",height:"900px"}}>
 
             <Toolbar>
-                <Link to='/home' style={LinkStyle}>
+                <Link to='/' style={LinkStyle}>
                     <ListItem button >
                         <ListItemIcon style={{color:"white"}}>
                             <Avatar alt="User Logo" src={user?.photoURL} />
