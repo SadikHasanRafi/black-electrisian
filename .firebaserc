@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "black-13c64"
-  }
+    "default": "black-electrician",
+    "black-electrician": "black-electrician"
+  },
+  "targets": {},
+  "etags": {}
 }

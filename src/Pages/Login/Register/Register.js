@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ import useAuth from '../../../Hooks/useAuth';
 // import useFirebase from '../../../Hooks/useFirebase';
 // import useAuth from '../../Hooks/useAuth';
 import Modal from '@mui/material/Modal';
-import { Autocomplete, Button, CardMedia, Grid, Paper, TextField, Toolbar, Typography,Alert } from "@mui/material";
+import { Autocomplete, Button, CardMedia, Grid, Paper, TextField, Toolbar, Typography,Alert, Snackbar } from "@mui/material";
 import Backdrop from '@mui/material/Backdrop';
 import Fade from '@mui/material/Fade';
 import { Box } from "@mui/system";
@@ -40,6 +40,7 @@ const style = {
     //Location & Navigate
     const location = useLocation()
     const navigate = useNavigate()
+  const [open, setOpen] = useState(false);
 
     //handle google login
     const handleGoogleLogin = () => {
@@ -56,6 +57,54 @@ const style = {
 
         registerUser(data.email, data.password, data.name,data.client,data.profession,data.choose,data.address,data.phone, location, navigate)
     }
+
+
+
+    const handleClose = (event, reason) => {
+        if (reason === "clickaway") {
+          return;
+        }
+        setOpen(false);
+      };
+
+
+
+  const getAuthErrorMessage = (error) => {
+    if (error && typeof error === "string") {
+      const match = error.match(/\(auth\/([^)]+)\)/);
+      if (match && match[1]) {
+        const errorCode = `auth/${match[1]}`;
+        switch (errorCode) {
+          case "auth/invalid-email":
+            return "The email address is not valid. Please enter a valid email.";
+          case "auth/user-disabled":
+            return "This account has been disabled. Please contact support.";
+          case "auth/user-not-found":
+            return "No user found with this email. Please check or sign up.";
+          case "auth/wrong-password":
+            return "Incorrect password. Please try again.";
+          case "auth/email-already-in-use":
+            return "This email is already registered. Please log in or reset your password.";
+          case "auth/weak-password":
+            return "The password is too weak. Please use a stronger password.";
+          case "auth/popup-closed-by-user":
+            return "The sign-in popup was closed before completing the process. Please try again.";
+          case "auth/cancelled-popup-request":
+            return "Sign-in request was canceled because another popup is open. Close it and try again.";
+          case "auth/popup-blocked":
+            return "The browser blocked the popup. Please enable popups and try again.";
+          case "auth/unauthorized-domain":
+            return "This domain is not authorized for Google sign-in. Please check your Firebase configuration.";
+          default:
+            return "An unknown error occurred. Please try again later.";
+        }
+      }
+    }
+    return "An error occurred. Please try again.";
+  };
+
+
+    
     return (
      <div className='signin-background'>
            <div className='py-5'>
@@ -198,11 +247,6 @@ className="p-2 m-2"
                             <span style={{ cursor: "pointer" }} className='fs-4 text-white'>Continue with <FcGoogle onClick={handleGoogleLogin} className='fs-2 google' /></span>
                         </div>
 
-                        {
-          authError && 
-          <Alert severity="error">{authError}</Alert>
-      }
-
 
                     </div>
                 </Col>
@@ -211,6 +255,24 @@ className="p-2 m-2"
               </div>
             </Row>
         </Container>
+
+        <Snackbar
+          open={open}
+          autoHideDuration={5000}
+          onClose={handleClose}
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        >
+          <Alert
+            onClose={handleClose}
+            severity="error"
+            variant="filled"
+            sx={{ width: '100%' }}
+          >
+            {authError && getAuthErrorMessage(authError)}
+          </Alert>
+        </Snackbar>
+
+
     </div>
      </div>
     );

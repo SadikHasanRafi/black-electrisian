@@ -18,7 +18,6 @@ import initial from "../Pages/Firebase/firebase.init";
 
   
 
-initial()
 
   const useFirebase=()=>{
     const [user, setUser] = useState({});
@@ -35,7 +34,7 @@ const handleClick=()=>{
     setToggle(false)
 }
 
-const auth = getAuth();
+const auth = getAuth(initial());
   const googleProvider = new GoogleAuthProvider();
 
 //   register email and password 
