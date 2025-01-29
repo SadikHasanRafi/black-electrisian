@@ -138,30 +138,7 @@ const style = {
                             className='w-75 mb-3' {...register("password2", { required: true })} placeholder='Re-enter Password' type="password" /> <br />
                             <input
                             style={{fontWeight:"500"}}
-                            className='w-75 mb-3' {...register("client", { required: true })} placeholder='buyer / user' /> <br />
-
-{/* <Form.Group as={Col} controlId="formGridRating"        style={{marginLeft:"74px",marginRight:"74px", borderRadius:"15px",color:"black"}}>
-                                        
-                                        <select
-                                        style={{borderRadius:"30px"}}
-                                            required
-                                            className="form-control shadow-none"
-                                            placeholder='buyer / user/ doctor' 
-                                            {...register("client")}
-                                        >
-                                           <option>Select categories</option>
-                                            <option value="buyers">buyers</option>
-                                            <option value="users">users</option>
-                                            <option value="doctors">doctors</option>
-                                            
-                                           
-                                          
-                                        </select>
-                                    </Form.Group><br /> */}
-
-                                    {/* start  */}
-
-                                    {/* <Button className="user-designs ms-5"  style={{background:"", padding:"", fontSize:""}} onClick={handleOpens}>Info</Button> */}
+                            className='w-75 mb-3' {...register("client", { required: true })} placeholder='Buyer / User' /> <br />
 
                                     <Modal
 aria-labelledby="transition-modal-title"

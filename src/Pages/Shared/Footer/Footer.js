@@ -55,7 +55,7 @@ const Footer = () => {
             <ul>
             <div className='contact-road'>
             <p>  <i class="fas fa-angle-double-right footer-menubar"></i></p> 
-                              <Link className="ms-2 footer-menubar" to="/home">
+                              <Link className="ms-2 footer-menubar" to="/">
            <li>Home</li>
            </Link>
         </div>
@@ -116,7 +116,7 @@ const Footer = () => {
         </div>
             <div className='contact-road'>
             <p>  <i class="fas fa-angle-double-right footer-menubar"></i></p> 
-                              <Link className="ms-2 footer-menubar" to="/home">
+                              <Link className="ms-2 footer-menubar" to="/">
            <li>Contact-us</li>
            </Link>
         </div>
@@ -133,7 +133,7 @@ const Footer = () => {
        <div className="right-footer-container">
        <div className='contact-road'>
             <p>  <i class="fas fa-angle-double-right footer-menubar"></i></p> 
-                              <Link className="ms-2 footer-menubar" to="/home">
+                              <Link className="ms-2 footer-menubar" to="/">
            <li>Dashboard</li>
            </Link>
         </div>
@@ -145,7 +145,7 @@ const Footer = () => {
         </div>
        <div className='contact-road'>
             <p>  <i class="fas fa-angle-double-right footer-menubar"></i></p> 
-                              <Link className="ms-2 footer-menubar" to="/home">
+                              <Link className="ms-2 footer-menubar" to="/">
            <li>Robotics</li>
            </Link>
         </div>
