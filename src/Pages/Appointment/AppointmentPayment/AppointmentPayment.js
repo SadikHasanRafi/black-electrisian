@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const AppointmentPayment = () => {
-    return (
-        <div>
-            payment
-        </div>
-    );
+  return <div>payment</div>;
 };
 
 export default AppointmentPayment;

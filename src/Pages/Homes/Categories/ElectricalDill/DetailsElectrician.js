@@ -20,7 +20,6 @@ import PaidIcon from "@mui/icons-material/Paid";
 import { Form, Col, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
-
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import PublishIcon from "@mui/icons-material/Publish";
 // import { CartContext } from "../../../Context/CartContext";
@@ -30,9 +29,6 @@ import { CartContext } from "../../../../contexts/CartContext";
 import Swal from "sweetalert2";
 import useAuth from "../../../../Hooks/useAuth";
 //   import { alert, ButtonStyle } from "../../Hooks/useStyle";
-
-
-
 
 const labels = {
   0.5: "Useless",
@@ -49,7 +45,7 @@ const labels = {
 const DetailsElectrician = () => {
   const [description, setDescription] = useState("");
   const [reviews, setReviews] = useState([]);
-  const { user } = useAuth()
+  const { user } = useAuth();
   // const { user } = useAuth();
   const [book, setBook] = useState({});
   const [cart, setCart] = useContext(CartContext);
@@ -72,10 +68,9 @@ const DetailsElectrician = () => {
     formState: { errors },
   } = useForm();
 
-
   const onSubmit = (data) => {
     console.log(data);
-    data.userEmail = user.email
+    data.userEmail = user.email;
 
     fetch("https://black-electrisian.onrender.com/bookElectrician", {
       method: "POST",
@@ -87,10 +82,7 @@ const DetailsElectrician = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          Swal.fire(
-            'Success booking!',
-
-          )
+          Swal.fire("Success booking!");
           reset();
         }
       });
@@ -109,10 +101,7 @@ const DetailsElectrician = () => {
     }
     localStorage.setItem("cart", JSON.stringify(newCart));
     setCart(() => newCart);
-    Swal.fire(
-      'Success Product!',
-
-    )
+    Swal.fire("Success Product!");
   };
   const iconStyle = { display: "flex", alignItems: "center" };
 
@@ -133,14 +122,18 @@ const DetailsElectrician = () => {
     fetchReviews();
   }, [number]);
 
-
   return (
     <>
       <Header></Header>
       <Container>
         <Box sx={{ textAlign: "center", my: 5 }}>
-          <Typography variant="h4" style={{ fontWeight: "600" }}>Product Name : {book?.Name}</Typography>
-          <Typography variant="h5" style={{ fontWeight: "600" }}> Product Price : {book?.ProductPrice}</Typography>
+          <Typography variant="h4" style={{ fontWeight: "600" }}>
+            Product Name : {book?.Name}
+          </Typography>
+          <Typography variant="h5" style={{ fontWeight: "600" }}>
+            {" "}
+            Product Price : {book?.ProductPrice}
+          </Typography>
         </Box>
 
         <Grid
@@ -151,7 +144,6 @@ const DetailsElectrician = () => {
           <Grid item xs={4} sm={8} md={10}>
             <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 12 }}>
               <Grid item xs={4} sm={4} md={6} sx={{ mb: 5 }}>
-
                 <div className="photo">
                   <div className="photoShops">
                     <CardMedia
@@ -162,10 +154,8 @@ const DetailsElectrician = () => {
                     />
                   </div>
                 </div>
-
               </Grid>
               <Grid item xs={4} sm={4} md={6}>
-
                 <Paper
                   sx={{
                     p: 2,
@@ -176,13 +166,26 @@ const DetailsElectrician = () => {
                   <Box>
                     <span style={iconStyle}>
                       <BorderColorIcon color="primary" />
-                      <Typography variant="body1" style={{ marginLeft: "10px", fontWeight: "600" }}> Name : {book?.Name}</Typography>
+                      <Typography
+                        variant="body1"
+                        style={{ marginLeft: "10px", fontWeight: "600" }}
+                      >
+                        {" "}
+                        Name : {book?.Name}
+                      </Typography>
                     </span>
                     <br />
                     <span style={iconStyle}>
                       {" "}
                       <PublishIcon color="primary" />
-                      <Typography variant="body1" style={{ marginLeft: "10px", fontWeight: "600", textAlign: "left" }}>
+                      <Typography
+                        variant="body1"
+                        style={{
+                          marginLeft: "10px",
+                          fontWeight: "600",
+                          textAlign: "left",
+                        }}
+                      >
                         Description: {book?.description}
                       </Typography>
                     </span>
@@ -190,7 +193,14 @@ const DetailsElectrician = () => {
                     <span style={iconStyle}>
                       {" "}
                       <DateRangeIcon color="primary" />
-                      <Typography variant="body1" style={{ marginLeft: "10px", fontWeight: "600", textAlign: "left" }}>
+                      <Typography
+                        variant="body1"
+                        style={{
+                          marginLeft: "10px",
+                          fontWeight: "600",
+                          textAlign: "left",
+                        }}
+                      >
                         Experience : {book?.experience}{" "}
                       </Typography>
                     </span>
@@ -198,7 +208,14 @@ const DetailsElectrician = () => {
                     <span style={iconStyle}>
                       {" "}
                       <AppRegistrationIcon color="primary" />
-                      <Typography variant="body1" style={{ marginLeft: "10px", fontWeight: "600", textAlign: "left" }}>
+                      <Typography
+                        variant="body1"
+                        style={{
+                          marginLeft: "10px",
+                          fontWeight: "600",
+                          textAlign: "left",
+                        }}
+                      >
                         Contact : {book?.contact}
                       </Typography>
                     </span>
@@ -208,7 +225,14 @@ const DetailsElectrician = () => {
                     <span style={iconStyle}>
                       {" "}
                       <PublishIcon color="primary" />
-                      <Typography variant="body1" style={{ marginLeft: "10px", fontWeight: "600", textAlign: "left" }}>
+                      <Typography
+                        variant="body1"
+                        style={{
+                          marginLeft: "10px",
+                          fontWeight: "600",
+                          textAlign: "left",
+                        }}
+                      >
                         Position : {book?.position}
                       </Typography>
                     </span>
@@ -218,18 +242,32 @@ const DetailsElectrician = () => {
                     <span style={iconStyle}>
                       {" "}
                       <PaidIcon color="primary" />
-                      <Typography variant="body1" style={{ marginLeft: "10px", fontWeight: "600", textAlign: "left" }}>
+                      <Typography
+                        variant="body1"
+                        style={{
+                          marginLeft: "10px",
+                          fontWeight: "600",
+                          textAlign: "left",
+                        }}
+                      >
                         {" "}
-                        Salary :  {book?.ProductPrice}
+                        Salary : {book?.ProductPrice}
                       </Typography>
                     </span>
                     <br />
                     <span style={iconStyle}>
                       {" "}
                       <PaidIcon color="primary" />
-                      <Typography variant="body1" style={{ marginLeft: "10px", fontWeight: "600", textAlign: "left" }}>
+                      <Typography
+                        variant="body1"
+                        style={{
+                          marginLeft: "10px",
+                          fontWeight: "600",
+                          textAlign: "left",
+                        }}
+                      >
                         {" "}
-                        Address  {book?.address}
+                        Address {book?.address}
                       </Typography>
                     </span>
                     <br />
@@ -244,79 +282,116 @@ const DetailsElectrician = () => {
                     </Box>
                   </Box>
                 </Paper>
-
-
-
               </Grid>
             </Grid>
             {/* <hr /> */}
 
-
             {/* start  */}
 
-            <Container style={{ marginTop: "60px" }} component="span" sx={{ py: 2, border: "1px dashed grey" }}>
+            <Container
+              style={{ marginTop: "60px" }}
+              component="span"
+              sx={{ py: 2, border: "1px dashed grey" }}
+            >
               <Box>
-                <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={{ fontWeight: "bold" }}
+                >
                   Electrician Booking
                 </Typography>
 
                 <Container>
                   <Row>
                     <Col md={{ span: 8, offset: 2 }}>
-                      <div className="login-form text-center shadow" style={{ background: "#2B5278", borderRadius: "20px" }}>
-                        <h2 className='mb-5 text-white'>Add Your Information</h2>
+                      <div
+                        className="login-form text-center shadow"
+                        style={{ background: "#2B5278", borderRadius: "20px" }}
+                      >
+                        <h2 className="mb-5 text-white">
+                          Add Your Information
+                        </h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
-
                           <input
                             style={{ fontWeight: "600", color: " #0E1621" }}
-                            className='w-75 mb-3'  {...register("username", { required: true })} placeholder='User Name' /> <br />
+                            className="w-75 mb-3"
+                            {...register("username", { required: true })}
+                            placeholder="User Name"
+                          />{" "}
+                          <br />
                           <input
                             style={{ fontWeight: "600", color: " #0E1621" }}
-                            className='w-75 mb-3'  {...register("useraddress", { required: true })} placeholder='User Address' /> <br />
+                            className="w-75 mb-3"
+                            {...register("useraddress", { required: true })}
+                            placeholder="User Address"
+                          />{" "}
+                          <br />
                           <input
                             style={{ fontWeight: "600", color: " #0E1621" }}
-                            className='w-75 mb-3'  {...register("ocupation", { required: true })} placeholder='User Ocupation' /> <br />
+                            className="w-75 mb-3"
+                            {...register("ocupation", { required: true })}
+                            placeholder="User Ocupation"
+                          />{" "}
+                          <br />
                           <input
                             style={{ fontWeight: "600", color: " #0E1621" }}
-                            className='w-75 mb-3'  {...register("city", { required: true })} placeholder='User City' /> <br />
+                            className="w-75 mb-3"
+                            {...register("city", { required: true })}
+                            placeholder="User City"
+                          />{" "}
+                          <br />
                           <input
                             style={{ fontWeight: "600", color: " #0E1621" }}
-                            className='w-75 mb-3'  {...register("userPhone", { required: true })} placeholder='User Phone' /> <br />
-
-
-
-
+                            className="w-75 mb-3"
+                            {...register("userPhone", { required: true })}
+                            placeholder="User Phone"
+                          />{" "}
+                          <br />
                           <input
                             style={{ fontWeight: "600", color: " #0E1621" }}
-                            className='w-75 mb-3' {...register("img", { required: true })} placeholder="img url" defaultValue={book.img} />
-
-
+                            className="w-75 mb-3"
+                            {...register("img", { required: true })}
+                            placeholder="img url"
+                            defaultValue={book.img}
+                          />
                           <input
                             style={{ fontWeight: "600", color: " #0E1621" }}
-                            className='w-75 mb-3'  {...register("electricianName", { required: true })} placeholder='ElectricianName' defaultValue={book.Name} /> <br />
+                            className="w-75 mb-3"
+                            {...register("electricianName", { required: true })}
+                            placeholder="ElectricianName"
+                            defaultValue={book.Name}
+                          />{" "}
+                          <br />
                           <input
                             style={{ fontWeight: "600", color: " #0E1621" }}
-                            className='w-75 mb-3'  {...register("electricianAddress", { required: true })} placeholder='Child or Old Name' defaultValue={book.address} /> <br />
-
-
-
+                            className="w-75 mb-3"
+                            {...register("electricianAddress", {
+                              required: true,
+                            })}
+                            placeholder="Child or Old Name"
+                            defaultValue={book.address}
+                          />{" "}
+                          <br />
                           <input
                             style={{ fontWeight: "600", color: " #0E1621" }}
-                            className='w-75 mb-3'  {...register("contact", { required: true })} placeholder='contact' defaultValue={book?.contact} />
+                            className="w-75 mb-3"
+                            {...register("contact", { required: true })}
+                            placeholder="contact"
+                            defaultValue={book?.contact}
+                          />
                           <input
                             style={{ fontWeight: "600", color: " #0E1621" }}
-                            className='w-75 mb-3'  {...register("positions", { required: true })} placeholder='position' defaultValue={book?.position} />
-
-
+                            className="w-75 mb-3"
+                            {...register("positions", { required: true })}
+                            placeholder="position"
+                            defaultValue={book?.position}
+                          />
                           <br></br>
-
-
-
-
-
-                          <button className='submit-all' type='submit'>Submit</button>
+                          <button className="submit-all" type="submit">
+                            Submit
+                          </button>
                         </form>
-
                       </div>
                     </Col>
                   </Row>
@@ -328,7 +403,7 @@ const DetailsElectrician = () => {
             <Box sx={{ my: 5 }}>
               <Form
                 onSubmit={handleSubmit(onSubmit)}
-              // className="shadow-lg px-2 px-md-5 py-3 text-cyan"
+                // className="shadow-lg px-2 px-md-5 py-3 text-cyan"
               >
                 {/* <h2 className=" text-center mb-2 abril-font">
                                     Give Us An Honest Review, Please !
@@ -390,9 +465,7 @@ const DetailsElectrician = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={4} sm={8} md={4}>
-
-          </Grid>
+          <Grid item xs={4} sm={8} md={4}></Grid>
         </Grid>
       </Container>
 

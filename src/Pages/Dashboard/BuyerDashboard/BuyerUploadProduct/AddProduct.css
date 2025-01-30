@@ -1,14 +1,12 @@
-.background-design{
-    /* background-color:rgb(230, 243, 243); */
-    background-color:#032831;
-    width:650px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 450px;
-    margin-top: 80px;
-
-
+.background-design {
+  /* background-color:rgb(230, 243, 243); */
+  background-color: #032831;
+  width: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 450px;
+  margin-top: 80px;
 }
 
 /* .background-design form{
@@ -20,53 +18,52 @@
 
 } */
 
-.emails{
-    margin-left: -10px;
-    color:white;
-    font-weight: 700;
-    font-size: 20px;
+.emails {
+  margin-left: -10px;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
 }
 
-.background-design input, .login-col textarea {
-	width:70%;
-	padding:10px;
-	margin:15px 0;
-	box-sizing:border-box;
-	border:none;
-    /* display: flex;
+.background-design input,
+.login-col textarea {
+  width: 70%;
+  padding: 10px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  border: none;
+  /* display: flex;
     justify-content: center; */
-	outline:none;
-	background:#f0f0f0;
-    background-color:#fff;
-	border:1px solid;
-    border-radius: 15px;
-  }
+  outline: none;
+  background: #f0f0f0;
+  background-color: #fff;
+  border: 1px solid;
+  border-radius: 15px;
+}
 
-  .selecteds{
-    width:70%;
-	padding:10px;
-	margin:15px 0;
-	box-sizing:border-box;
-	border:none;
-    margin-left: 45px;
-    /* display: flex;
+.selecteds {
+  width: 70%;
+  padding: 10px;
+  margin: 15px 0;
+  box-sizing: border-box;
+  border: none;
+  margin-left: 45px;
+  /* display: flex;
     justify-content: center; */
-	outline:none;
-	background:#f0f0f0;
-    background-color:#fff;
-	border:1px solid;
-    border-radius: 15px;
+  outline: none;
+  background: #f0f0f0;
+  background-color: #fff;
+  border: 1px solid;
+  border-radius: 15px;
+}
 
-  }
-
-  .buttontype{
-
-    color:white;
-    background-color:#182533;
-    border:2px solid white;
-    font-size:23px;
-    padding: 10px 25px;
-    border-radius: 12px;
-    margin-bottom: 18px;
-    font-weight: 700;
-  }
+.buttontype {
+  color: white;
+  background-color: #182533;
+  border: 2px solid white;
+  font-size: 23px;
+  padding: 10px 25px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  font-weight: 700;
+}

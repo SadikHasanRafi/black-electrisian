@@ -4,7 +4,7 @@ const firebaseConfig = {
   projectId: "black-electrician",
   storageBucket: "black-electrician.firebasestorage.app",
   messagingSenderId: "763684470391",
-  appId: "1:763684470391:web:9f422e6450fa058cf99072"
+  appId: "1:763684470391:web:9f422e6450fa058cf99072",
 };
 
-  export default firebaseConfig;
+export default firebaseConfig;

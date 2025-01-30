@@ -24,9 +24,7 @@ export default function CartDrawer() {
     totalQuantity = totalQuantity + product.quantity;
   }
 
-
   const toggleDrawer = (open) => (event) => {
-
     if (
       event &&
       event.type === "keydown" &&
@@ -38,26 +36,24 @@ export default function CartDrawer() {
     setState(open);
   };
 
-
   let navigate = useNavigate();
   const bookOrderReview = () => {
-    return navigate('/OrderReview');
-  }
+    return navigate("/OrderReview");
+  };
 
   const list = () => (
-    <Box
-      sx={{ width: { sm: 400, md: 500 } }}
-      role="presentation"
-
-    >
+    <Box sx={{ width: { sm: 400, md: 500 } }} role="presentation">
       <List sx={{ pt: 0 }}>
         <Cart>
-
-          <Button onClick={bookOrderReview} sx={{ width: 1 }} style={{background:"#032831",color:"white"}}>Review Now</Button>
-
+          <Button
+            onClick={bookOrderReview}
+            sx={{ width: 1 }}
+            style={{ background: "#032831", color: "white" }}
+          >
+            Review Now
+          </Button>
         </Cart>
       </List>
-
     </Box>
   );
 
@@ -76,7 +72,7 @@ export default function CartDrawer() {
         </IconButton>
 
         <SwipeableDrawer
-          anchor={'right'}
+          anchor={"right"}
           open={state}
           onClose={toggleDrawer(false)}
           onOpen={toggleDrawer(true)}

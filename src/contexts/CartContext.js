@@ -10,7 +10,6 @@ const CartContextProvider = ({ children }) => {
     if (allCart) setCart(allCart);
   }, []);
 
-  
   return (
     <CartContext.Provider value={[cart, setCart]}>
       {children}

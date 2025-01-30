@@ -9,7 +9,6 @@ const SearchBar = ({ handleOnChange, placeholder }) => {
     <Paper
       component="form"
       sx={{
-
         mx: "auto",
         display: "flex",
         alignItems: "center",
@@ -35,7 +34,6 @@ const SearchBar = ({ handleOnChange, placeholder }) => {
             sm: "15px",
             md: "20px",
           },
-
         }}
         placeholder={placeholder}
         inputProps={{ "aria-label": "search school" }}
@@ -43,8 +41,6 @@ const SearchBar = ({ handleOnChange, placeholder }) => {
       <IconButton
         type="submit"
         sx={{
-
-   
           color: "#032831",
           fontWeight: "bold",
         }}

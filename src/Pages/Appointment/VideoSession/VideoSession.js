@@ -17,7 +17,6 @@
 //         <div className='videosession' style={{background:""}}>
 //       {/* <Header></Header> */}
 
-
 //    <div className="container">
 //    <div className='row'>
 //         <div className="col-md-7 mt-5">
@@ -40,8 +39,7 @@
 //         </div>
 //       </div>
 //    </div>
-    
-          
+
 //             {/* <Footer></Footer> */}
 //         </div>
 //     );

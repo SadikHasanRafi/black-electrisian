@@ -1,22 +1,22 @@
-.googles:hover{
-    /* background-color: #1289A7; */
-    background-color:  #7E2231;
-    color:white;
+.googles:hover {
+  /* background-color: #1289A7; */
+  background-color: #7e2231;
+  color: white;
 }
 
-.google-icon:hover{
-    color:white;
+.google-icon:hover {
+  color: white;
 }
 
-.signin-background{
-    background-color: #032831;
-    /* background-color: #182533; */
-    /* width:100%; */
-    height:140vh; 
+.signin-background {
+  background-color: #032831;
+  /* background-color: #182533; */
+  /* width:100%; */
+  height: 140vh;
 }
 
-.set-infos input{
-    padding: 10px 60px;
-    width:90%;
-    /* background-color: red; */
+.set-infos input {
+  padding: 10px 60px;
+  width: 90%;
+  /* background-color: red; */
 }

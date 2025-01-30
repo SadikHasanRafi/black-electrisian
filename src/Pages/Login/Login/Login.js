@@ -93,7 +93,9 @@ const Login = () => {
                     className="login-form text-center shadow"
                     style={{ background: "black", borderRadius: "20px" }}
                   >
-                    <h2 className="mb-5 text-white">Login to Black-Electrical</h2>
+                    <h2 className="mb-5 text-white">
+                      Login to Black-Electrical
+                    </h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                       <input
                         style={{ fontWeight: "500" }}
@@ -118,7 +120,10 @@ const Login = () => {
                       <p className="text-white">
                         New to Black Electrician?{" "}
                         <Link to={"/register"}>
-                          <span className="login-links" style={{ color: "#46AADC" }}>
+                          <span
+                            className="login-links"
+                            style={{ color: "#46AADC" }}
+                          >
                             Create a free Account
                           </span>
                         </Link>
@@ -149,7 +154,7 @@ const Login = () => {
             onClose={handleClose}
             severity="error"
             variant="filled"
-            sx={{ width: '100%' }}
+            sx={{ width: "100%" }}
           >
             {authError && getAuthErrorMessage(authError)}
           </Alert>
