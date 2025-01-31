@@ -22,6 +22,7 @@ import Swal from "sweetalert2";
 import useAuth from "../../../../Hooks/useAuth";
 import CustomerAddress from "./CustomerAddress";
 import CartOrder from "./CustomerBooking";
+import { baseUrl } from "../../../../constants/urls";
 
 const ApprovedData = () => {
   const [ordering, setOrder] = useState([]);
@@ -31,7 +32,7 @@ const ApprovedData = () => {
   const [status, setStatus] = useState("");
 
   useEffect(() => {
-    fetch("https://black-electrisian.onrender.com/my")
+    fetch(baseUrl+"/my")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -40,7 +41,7 @@ const ApprovedData = () => {
   }, []);
 
   const handleUpdate = (id) => {
-    fetch(`https://black-electrisian.onrender.com/updateStatus/${id}`, {
+    fetch(`${baseUrl}/updateStatus/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status }),
@@ -63,7 +64,7 @@ const ApprovedData = () => {
       if (result.isConfirmed) {
         axios
           .delete(
-            `https://black-electrisian.onrender.com/manageAllOrderDelete/${id}`,
+            `${baseUrl}/manageAllOrderDelete/${id}`,
           )
           .then((response) => {
             response.status === 204 &&

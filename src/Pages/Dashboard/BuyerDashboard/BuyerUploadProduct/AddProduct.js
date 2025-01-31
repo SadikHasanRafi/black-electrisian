@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import swal from 'sweetalert';
 import "./AddProduct.css";
+import { baseUrl } from "../../../../constants/urls";
 const AddProduct = () => {
   const [productName, setproductName] = useState("");
   const [ProductPrice, setProductPrice] = useState("");
@@ -23,7 +24,7 @@ const AddProduct = () => {
 
     console.log(formData);
 
-    fetch("https://black-electrisian.onrender.com/PostUploadBuyer", {
+    fetch(baseUrl+"/PostUploadBuyer", {
       method: "POST",
       body: formData,
     })

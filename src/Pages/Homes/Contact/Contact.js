@@ -14,6 +14,7 @@ import emailjs from "@emailjs/browser";
 import SendIcon from "@mui/icons-material/Send";
 import Header from "../../Shared/Header/Header";
 import Footer from "../../Shared/Footer/Footer";
+import { baseUrl } from "../../../constants/urls";
 
 const Contact = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -40,7 +41,7 @@ const Contact = () => {
   };
 
   const onSubmit = (data) => {
-    fetch("https://black-electrisian.onrender.com/contactus", {
+    fetch(baseUrl+"/contactus", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -91,8 +92,8 @@ const Contact = () => {
                     variant="body"
                   >
                     You can find out any information about e-commerce in this
-                    website.If you have any question or confusion! Don't be shy.
-                    Feel free to connect with us. We are waitting for your
+                    website.If you have any question or confusion! Don&apos;t be shy.
+                    Feel free to connect with us. We are waiting for your
                     response.
                   </Typography>
                 </Box>

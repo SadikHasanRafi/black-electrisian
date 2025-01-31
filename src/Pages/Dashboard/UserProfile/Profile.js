@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
 
 import "./Profile.css";
+import { baseUrl } from "../../../constants/urls";
 
 const Profile = () => {
   const { user } = useAuth();
   const [userInfo, setUserInfo] = useState({});
 
   useEffect(() => {
-    fetch(`https://black-electrisian.onrender.com/updateUser/${user.email}`)
+    fetch(`${baseUrl}/updateUser/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setUserInfo(data);

@@ -26,6 +26,7 @@ import { CartContext } from "../../../contexts/CartContext";
 import Header from "../../Shared/Header/Header";
 import Footer from "../../Shared/Footer/Footer";
 import Swal from "sweetalert2";
+import { baseUrl } from "../../../constants/urls";
 // import { CartContext } from "../../../Context/CartContext";
 // import Header from "../../../Shared/Header/Header";
 // import Footer from "../../../Shared/Footer/Footer";
@@ -57,7 +58,7 @@ const DetailsAppointment = () => {
   const [isFetched, setIsFetched] = useState(0);
 
   useEffect(() => {
-    fetch(`https://black-electrisian.onrender.com/doctorDetails/${id}`)
+    fetch(`${baseUrl}/doctorDetails/${id}`)
       .then((res) => res.json())
       .then((data) => setBook(data));
   }, [id]);

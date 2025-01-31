@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../../Hooks/useAuth";
 import { useState, useEffect } from "react";
 import { Alert, Snackbar } from "@mui/material";
+import React from "react"
 
 const Login = () => {
   const { loginWithGoogle, loginWithOwnEmailAndPass, authError } = useAuth();

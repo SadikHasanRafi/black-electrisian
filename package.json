@@ -42,10 +42,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint src test",
-    "lint:fix": "npm run lint -- --fix",
-    "prettier": "npx prettier src test --check",
-    "prettier:fix": "npm run prettier -- --write",
-    "format": "npm run prettier:fix && npm run lint:fix"
+    "lint:fix": "npm run lint --fix",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "npm run prettier --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "format:win": "npm run prettier:fix | npm run lint:fix",
+    "deploy:vercel:win": "npm run build | vercel --prod"
   },
   "eslintConfig": {
     "extends": [

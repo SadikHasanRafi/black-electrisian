@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../Hooks/useAuth";
+import { baseUrl } from "../../../../constants/urls";
 
 const AdminProductUpload = () => {
   const { user } = useAuth();
@@ -12,7 +13,7 @@ const AdminProductUpload = () => {
 
     data.adminEmail = user.email;
 
-    fetch("https://black-electrisian.onrender.com/PostUploadAdmin", {
+    fetch(baseUrl+"/PostUploadAdmin", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

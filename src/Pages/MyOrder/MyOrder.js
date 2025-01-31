@@ -21,6 +21,7 @@ import useAuth from "../../Hooks/useAuth";
 // import CartOrder from './MyBooking';
 import CustomerAddress from "./CustomerAddress";
 import CartOrder from "./CardOrder";
+import { baseUrl } from "../../constants/urls";
 // import useAuth from '../../../../Hooks/useAuth';
 
 const MyOrder = () => {
@@ -30,7 +31,7 @@ const MyOrder = () => {
   const [rowsPerPage, setRowsPerPage] = React.useState(4);
 
   useEffect(() => {
-    fetch(`https://black-electrisian.onrender.com/myOrder/${user?.email}`)
+    fetch(`${baseUrl}/myOrder/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setOrder(data);
@@ -50,7 +51,7 @@ const MyOrder = () => {
       if (result.isConfirmed) {
         axios
           .delete(
-            `https://black-electrisian.onrender.com/manageAllOrderDelete/${id}`,
+            `${baseUrl}/manageAllOrderDelete/${id}`,
           )
           .then((response) => {
             response.status === 204 &&

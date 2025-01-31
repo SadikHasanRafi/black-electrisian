@@ -26,6 +26,7 @@ import useAuth from "../../../../Hooks/useAuth";
 import Header from "../../../Shared/Header/Header";
 import SearchBar from "../SearchBar";
 import Footer from "../../../Shared/Footer/Footer";
+import { baseUrl } from "../../../../constants/urls";
 
 const Fan = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -69,7 +70,7 @@ const Fan = () => {
   const userData = { email: user.email, name: user.displayName };
 
   const fetchData = () => {
-    fetch("https://black-electrisian.onrender.com/products")
+    fetch(baseUrl+"/products")
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.allData);
@@ -85,7 +86,7 @@ const Fan = () => {
   }, [type, year, code, page]);
 
   useEffect(() => {
-    fetch("https://black-electrisian.onrender.com/products")
+    fetch(baseUrl+"/products")
       .then((res) => res.json())
       .then((data) => setModel(data.allData));
   }, []);

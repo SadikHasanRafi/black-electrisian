@@ -11,6 +11,7 @@ import {
 
 import { useEffect, useState } from "react";
 import initial from "../Pages/Firebase/firebase.init";
+import { baseUrl } from "../constants/urls";
 // import initial from "../Pages/Firebase/firebase.init";
 
 const useFirebase = () => {
@@ -166,7 +167,7 @@ const useFirebase = () => {
       address,
       phone,
     };
-    fetch("https://black-electrisian.onrender.com/users", {
+    fetch(baseUrl+"/users", {
       method: method,
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),
@@ -188,7 +189,7 @@ const useFirebase = () => {
 
   // buyer CONDITIONAL DATALOAD
   useEffect(() => {
-    fetch(`https://black-electrisian.onrender.com/users/${user.email}`)
+    fetch(`${baseUrl}/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setBuyer(data?.buyer);
@@ -196,7 +197,7 @@ const useFirebase = () => {
   }, [user.email]);
   // doctor CONDITIONAL DATALOAD
   useEffect(() => {
-    fetch(`https://black-electrisian.onrender.com/usersdatas/${user.email}`)
+    fetch(`${baseUrl}/usersdatas/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setDoctor(data?.doctor);
@@ -205,7 +206,7 @@ const useFirebase = () => {
 
   //  admin role the database
   useEffect(() => {
-    fetch(`https://black-electrisian.onrender.com/userLogin/${user.email}`)
+    fetch(`${baseUrl}/userLogin/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data?.admin));
   }, [user.email]);

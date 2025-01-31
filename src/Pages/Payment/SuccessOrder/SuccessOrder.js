@@ -15,6 +15,7 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 // import Footer from '../../Shared/Footer/Footer';
 // import NavigationBar from '../../Shared/NavigationBar/NavigationBar';
 import "./SuccessOrder.css";
+import { baseUrl } from "../../../constants/urls";
 // import Logo from './Img/logo.png'
 // import { api } from '../../../Hooks/Api';
 
@@ -26,7 +27,7 @@ const SuccessOrder = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://black-electrisian.onrender.com/orders/${id}`)
+    fetch(`${baseUrl}/orders/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setBook(data);

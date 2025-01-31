@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CheckEmail from "./CheckEmail";
 // import swal from 'sweetalert';
 import "./MakeAdmin.css";
+import { baseUrl } from "../../../../constants/urls";
 const MakeAdmin = () => {
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
@@ -10,7 +11,7 @@ const MakeAdmin = () => {
   };
   const handleAdmin = (e) => {
     const user = { email };
-    fetch("https://black-electrisian.onrender.com/userLogin/admin", {
+    fetch(baseUrl+"/userLogin/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

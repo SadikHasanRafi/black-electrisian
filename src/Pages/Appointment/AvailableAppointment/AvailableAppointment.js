@@ -11,6 +11,7 @@ import ReactPaginate from "react-paginate";
 import Booking from "../Booking";
 import SearchBar from "../../Homes/Categories/SearchBar";
 import Calender from "../Calender";
+import { baseUrl } from "../../../constants/urls";
 const bookAppointment = [
   {
     id: 1,
@@ -80,7 +81,7 @@ const AvailableAppointment = ({ date }) => {
   };
   const fetchData = () => {
     fetch(
-      `https://black-electrisian.onrender.com/doctorUpload?page=${page}&&size=${size}&&location=${location}`,
+      `${baseUrl}/doctorUpload?page=${page}&&size=${size}&&location=${location}`,
     )
       .then((res) => res.json())
       .then((data) => {
@@ -96,7 +97,7 @@ const AvailableAppointment = ({ date }) => {
   }, [specialist, page, size, location, warrenty, material, size]);
 
   useEffect(() => {
-    fetch("https://black-electrisian.onrender.com/doctorUpload")
+    fetch(baseUrl+"/doctorUpload")
       .then((res) => res.json())
       .then((data) => setModel(data.allQuestions));
   }, []);

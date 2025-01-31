@@ -19,6 +19,7 @@ import {
 
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../Hooks/useAuth";
+import { baseUrl } from "../../../../constants/urls";
 
 const ContactUs = () => {
   const [work, setWork] = useState([]);
@@ -32,7 +33,7 @@ const ContactUs = () => {
   //   },[])
 
   const fetchData = () => {
-    fetch("https://black-electrisian.onrender.com/contactus")
+    fetch(baseUrl+"/contactus")
       .then((res) => res.json())
       // .then(data => setWork(data))
       .then((data) => {

@@ -4,6 +4,7 @@ import useAuth from "../../../../Hooks/useAuth";
 // import useAuth from '../../../../Hooks/useAuth';
 // import ApprovedData from './ApprovedData';
 import Data from "./Data";
+import { baseUrl } from "../../../../constants/urls";
 
 // import ManageTable from './ManageTable';
 // import useFirebase from '../../../hooks/useFirebase';
@@ -16,7 +17,7 @@ const CheckEmail = () => {
   const [status, setStatus] = useState("");
 
   useEffect(() => {
-    fetch(`https://black-electrisian.onrender.com/adminConfarmadmin`)
+    fetch(`${baseUrl}/adminConfarmadmin`)
       .then((res) => res.json())
       .then((data) => setQuestions(data));
     // console.log(data)
@@ -28,7 +29,7 @@ const CheckEmail = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("are you sure, you want to delete");
     if (proceed) {
-      fetch(`https://black-electrisian.onrender.com/deleteUser/${id}`, {
+      fetch(`${baseUrl}/deleteUser/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -46,7 +47,7 @@ const CheckEmail = () => {
   // let value=question.drivelink;
 
   const handleUpdate = (id) => {
-    fetch(`https://black-electrisian.onrender.com/QuestionStatusUpdate/${id}`, {
+    fetch(`${baseUrl}/QuestionStatusUpdate/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status }),

@@ -29,6 +29,7 @@ import { CartContext } from "../../../contexts/CartContext";
 import useAuth from "../../../Hooks/useAuth";
 import Header from "../../Shared/Header/Header";
 import Footer from "../../Shared/Footer/Footer";
+import { baseUrl } from "../../../constants/urls";
 // import spinner from './../../../Assets/Images/Infinity-1s-200px.svg'
 const Food = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -96,7 +97,7 @@ const Food = () => {
   // }, [type, year, code, page]);
 
   const fetchData = () => {
-    fetch("https://black-electrisian.onrender.com/products")
+    fetch(baseUrl+"/products")
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.allData);
@@ -151,7 +152,7 @@ const Food = () => {
   // }
 
   useEffect(() => {
-    fetch("https://black-electrisian.onrender.com/products")
+    fetch(baseUrl+"/products")
       .then((res) => res.json())
       .then((data) => setModel(data.allData));
   }, []);

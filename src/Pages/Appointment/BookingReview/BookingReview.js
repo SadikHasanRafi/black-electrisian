@@ -11,6 +11,7 @@ import swal from "sweetalert2";
 import { useForm } from "react-hook-form";
 import { Form, Col } from "react-bootstrap";
 import useAuth from "../../../Hooks/useAuth";
+import { baseUrl } from "../../../constants/urls";
 // import {  Container } from '@mui/material';
 // import './BookingModal.css'
 // import useAuth from '../../Hooks/useAuth';
@@ -52,7 +53,7 @@ const BookingReview = ({ opens, handleCloses, booking, date }) => {
       date: date.toLocaleDateString(),
     };
     // console.log(appointments)
-    fetch("https://black-electrisian.onrender.com/postReview ", {
+    fetch(baseUrl+"/postReview ", {
       method: "post",
       headers: {
         "content-type": "application/json",

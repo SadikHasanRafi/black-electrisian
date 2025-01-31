@@ -12,6 +12,7 @@ import swal from "sweetalert2";
 // import './BookingModal.css'
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import { baseUrl } from "../../constants/urls";
 const style = {
   position: "absolute",
   top: "50%",
@@ -44,7 +45,7 @@ const BookingModal = ({ open, handleClose, booking, date }) => {
       date: date.toLocaleDateString(),
     };
     // console.log(appointments)
-    fetch("https://black-electrisian.onrender.com/appointments ", {
+    fetch(baseUrl+"/appointments ", {
       method: "post",
       headers: {
         "content-type": "application/json",

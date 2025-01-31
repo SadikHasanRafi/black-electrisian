@@ -16,6 +16,7 @@ import {
 
 import useAuth from "../../../Hooks/useAuth";
 import { Box } from "@mui/system";
+import { baseUrl } from "../../../constants/urls";
 // import useAuth from '../../../../hooks/useAuth';
 // import './Payment.css'
 
@@ -35,7 +36,7 @@ const DoctorPayment = () => {
 
   useEffect(() => {
     fetch(
-      `https://black-electrisian.onrender.com/appointments/${appointmentId}`,
+      `${baseUrl}/appointments/${appointmentId}`,
     )
       .then((res) => res.json())
       .then((data) => setPayment(data));
@@ -51,7 +52,7 @@ const DoctorPayment = () => {
       time: time,
     };
     // console.log(order);
-    fetch(`https://black-electrisian.onrender.com/initPost`, {
+    fetch(`${baseUrl}/initPost`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

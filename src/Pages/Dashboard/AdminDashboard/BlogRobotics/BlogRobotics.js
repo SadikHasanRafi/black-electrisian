@@ -2,13 +2,14 @@ import React from "react";
 import { Col, Row, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../Hooks/useAuth";
+import { baseUrl } from "../../../../constants/urls";
 
 const BlogRobotics = () => {
   const { user } = useAuth();
   // const {admin}=useAuth()
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    fetch("https://black-electrisian.onrender.com/blogrobot", {
+    fetch(baseUrl+"/blogrobot", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

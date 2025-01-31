@@ -29,6 +29,7 @@ import { CartContext } from "../../../contexts/CartContext";
 import useAuth from "../../../Hooks/useAuth";
 import Header from "../../Shared/Header/Header";
 import Footer from "../../Shared/Footer/Footer";
+import { baseUrl } from "../../../constants/urls";
 // import spinner from './../../../Assets/Images/Infinity-1s-200px.svg'
 const ManyProducts = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -96,7 +97,7 @@ const ManyProducts = () => {
   // }, [type, year, code, page]);
 
   const fetchData = () => {
-    fetch("https://black-electrisian.onrender.com/ValueUpdates")
+    fetch(baseUrl+"/ValueUpdates")
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data);
@@ -151,7 +152,7 @@ const ManyProducts = () => {
   // }
 
   useEffect(() => {
-    fetch("https://black-electrisian.onrender.com/ValueUpdates")
+    fetch(baseUrl+"/ValueUpdates")
       .then((res) => res.json())
       .then((data) => setModel(data));
   }, []);

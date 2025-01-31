@@ -28,6 +28,7 @@ import useAuth from "../../../../Hooks/useAuth";
 import Header from "../../../Shared/Header/Header";
 import SearchBar from "../SearchBar";
 import Footer from "../../../Shared/Footer/Footer";
+import { baseUrl } from "../../../../constants/urls";
 
 const AllCategories = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -69,7 +70,7 @@ const AllCategories = () => {
   };
   const fetchData = () => {
     fetch(
-      `https://black-electrisian.onrender.com/products?page=${page}&&categories=${categories}&&sizing=${sizing}&&warrenty=${warrenty}&&material=${material}&&size=${size}`,
+      `${baseUrl}/products?page=${page}&&categories=${categories}&&sizing=${sizing}&&warrenty=${warrenty}&&material=${material}&&size=${size}`,
     )
       .then((res) => res.json())
       .then((data) => {
@@ -85,7 +86,7 @@ const AllCategories = () => {
   }, [categories, page, size, sizing, warrenty, material, size]);
 
   useEffect(() => {
-    fetch("https://black-electrisian.onrender.com/products")
+    fetch(baseUrl+"/products")
       .then((res) => res.json())
       .then((data) => setModel(data.allData));
   }, []);

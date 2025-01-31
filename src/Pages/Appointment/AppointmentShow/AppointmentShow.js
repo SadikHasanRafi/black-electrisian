@@ -9,6 +9,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
+import { baseUrl } from "../../../constants/urls";
 
 const AppointmentShow = ({ date }) => {
   console.log(date);
@@ -16,7 +17,7 @@ const AppointmentShow = ({ date }) => {
   const [userAppointment, setUserAppointment] = useState([]);
 
   useEffect(() => {
-    const url = `https://black-electrisian.onrender.com/appointments?email=${user.email}&date=${date.toLocaleDateString()}`;
+    const url = `${baseUrl}/appointments?email=${user.email}&date=${date.toLocaleDateString()}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

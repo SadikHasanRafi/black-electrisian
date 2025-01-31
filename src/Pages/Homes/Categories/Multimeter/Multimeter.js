@@ -27,6 +27,7 @@ import { CartContext } from "../../../../contexts/CartContext";
 import Header from "../../../Shared/Header/Header";
 import SearchBar from "../SearchBar";
 import useAuth from "../../../../Hooks/useAuth";
+import { baseUrl } from "../../../../constants/urls";
 // import Footer from '../../Shared/Footer/Footer';
 
 const Multimeter = () => {
@@ -71,7 +72,7 @@ const Multimeter = () => {
   const userData = { email: user.email, name: user.displayName };
 
   const fetchData = () => {
-    fetch("https://black-electrisian.onrender.com/products")
+    fetch(baseUrl+"/products")
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.allData);
@@ -87,14 +88,14 @@ const Multimeter = () => {
   }, [type, year, code, page]);
 
   useEffect(() => {
-    fetch("https://black-electrisian.onrender.com/products")
+    fetch(baseUrl+"/products")
       .then((res) => res.json())
       .then((data) => setModel(data.allData));
   }, []);
 
   // like
   const handleLike = (id) => {
-    fetch(`https://black-electrisian.onrender.com/like/${id}`, {
+    fetch(`${baseUrl}/like/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(userData),
@@ -113,7 +114,7 @@ const Multimeter = () => {
       .catch((err) => console.log(err));
   };
   const handleUnLike = (id) => {
-    fetch(`https://black-electrisian.onrender.com/unlike/${id}`, {
+    fetch(`${baseUrl}/unlike/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(userData),

@@ -27,6 +27,7 @@ import { CartContext } from "../../../../contexts/CartContext";
 import Header from "../../../Shared/Header/Header";
 import SearchBar from "../SearchBar";
 import useAuth from "../../../../Hooks/useAuth";
+import { baseUrl } from "../../../../constants/urls";
 // import Footer from '../../Shared/Footer/Footer';
 
 const Electricaldrill = () => {
@@ -71,7 +72,7 @@ const Electricaldrill = () => {
   const userData = { email: user.email, name: user.displayName };
 
   const fetchData = () => {
-    fetch("https://black-electrisian.onrender.com/products")
+    fetch(baseUrl+"/products")
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.allData);
@@ -87,7 +88,7 @@ const Electricaldrill = () => {
   }, [type, year, code, page]);
 
   useEffect(() => {
-    fetch("https://black-electrisian.onrender.com/products")
+    fetch(baseUrl+"/products")
       .then((res) => res.json())
       .then((data) => setModel(data.allData));
   }, []);

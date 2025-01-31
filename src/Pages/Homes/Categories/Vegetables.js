@@ -28,6 +28,7 @@ import { CartContext } from "../../../contexts/CartContext";
 import useAuth from "../../../Hooks/useAuth";
 import Header from "../../Shared/Header/Header";
 import Footer from "../../Shared/Footer/Footer";
+import { baseUrl } from "../../../constants/urls";
 
 const Vegetable = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -73,7 +74,7 @@ const Vegetable = () => {
   // checkbox er value true or false return kore
 
   const fetchData = () => {
-    fetch("https://black-electrisian.onrender.com/products")
+    fetch(baseUrl+"/products")
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.allData);
@@ -91,14 +92,14 @@ const Vegetable = () => {
   }, [type, year, code, page]);
 
   useEffect(() => {
-    fetch("https://black-electrisian.onrender.com/products")
+    fetch(baseUrl+"/products")
       .then((res) => res.json())
       .then((data) => setModel(data.allData));
   }, []);
 
   // like
   const handleLike = (id) => {
-    fetch(`https://black-electrisian.onrender.com/like/${id}`, {
+    fetch(`${baseUrl}/like/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(userData),
@@ -117,7 +118,7 @@ const Vegetable = () => {
       .catch((err) => console.log(err));
   };
   const handleUnLike = (id) => {
-    fetch(`https://black-electrisian.onrender.com/unlike/${id}`, {
+    fetch(`${baseUrl}/unlike/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(userData),

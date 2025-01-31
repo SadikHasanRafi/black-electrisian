@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
@@ -25,6 +26,7 @@ import Fade from "@mui/material/Fade";
 // import CartDrawer from '../../Components/CartDrawer';
 import "./PaymentForm.css";
 import { countries } from "./CountryData";
+import { baseUrl } from "../../constants/urls";
 
 const PaymentFrom = () => {
   const style = {
@@ -76,7 +78,7 @@ const PaymentFrom = () => {
       status: "Pending",
     };
     axios
-      .post("https://black-electrisian.onrender.com/init", paymentData)
+      .post(baseUrl+"/init", paymentData)
       .then((res) => {
         window.location.replace(res?.data);
         localStorage.removeItem("productCart");
@@ -94,7 +96,7 @@ const PaymentFrom = () => {
   }, []);
 
   const fetchData = () => {
-    fetch("https://black-electrisian.onrender.com/postBuyer")
+    fetch(baseUrl+"/postBuyer")
       .then((res) => res.json())
       // .then(data => setWork(data))
       .then((data) => {

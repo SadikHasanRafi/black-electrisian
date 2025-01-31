@@ -99,7 +99,7 @@ const Categories = () => {
                     }}
                   >
                     <Paper
-                      sx={{
+                      style={{
                         p: 1,
                         margin: "auto",
                         maxWidth: 400,
@@ -108,13 +108,13 @@ const Categories = () => {
                       }}
                     >
                       <div style={{}}>
-                        <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        <Box style={{ display: "flex", justifyContent: "center" }}>
                           <Link style={{ textDecoration: "none" }} to="/drill">
                             <img
                               height="90"
-                              style={{ borderRadius: "50%" }}
+                              
                               src="https://st2.depositphotos.com/12982378/48267/i/450/depositphotos_482674902-stock-photo-cropped-view-workman-electric-drill.jpg"
-                              sx={{
+                              style={{
                                 //  width: 30,
                                 borderRadius: "100%",
                                 height: 10,
@@ -164,7 +164,7 @@ const Categories = () => {
                     }}
                   >
                     <Paper
-                      sx={{
+                      style={{
                         p: 1,
                         margin: "auto",
                         maxWidth: 400,
@@ -173,16 +173,16 @@ const Categories = () => {
                       }}
                     >
                       <div style={{}}>
-                        <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        <Box style={{ display: "flex", justifyContent: "center" }}>
                           <Link
                             style={{ textDecoration: "none" }}
                             to="/Voltage"
                           >
                             <img
                               height="90"
-                              style={{ borderRadius: "50%" }}
+                              
                               src="https://housing.com/news/wp-content/uploads/2023/04/KAIWEETS-HT100-Non-Contact-Voltage-Tester-Pen-and-KAIWEETS-VT500-Voltage-Tester_-12V-300V-Non-Contact-and-Contact-Voltage-Pen-with-NCV-review-The-Gadgeteer.png"
-                              sx={{
+                              style={{
                                 //  width: 30,
                                 borderRadius: "100%",
                                 height: 10,
@@ -232,7 +232,7 @@ const Categories = () => {
                     }}
                   >
                     <Paper
-                      sx={{
+                      style={{
                         p: 1,
                         margin: "auto",
                         maxWidth: 400,
@@ -241,13 +241,13 @@ const Categories = () => {
                       }}
                     >
                       <div style={{}}>
-                        <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        <Box style={{ display: "flex", justifyContent: "center" }}>
                           <Link style={{ textDecoration: "none" }} to="/light">
                             <img
                               height="90"
-                              style={{ borderRadius: "50%" }}
+                              
                               src="https://images.unsplash.com/photo-1532007271951-c487760934ae?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGxpZ2h0JTIwYnVsYnxlbnwwfHwwfHx8MA%3D%3D"
-                              sx={{
+                              style={{
                                 //  width: 30,
                                 borderRadius: "100%",
                                 height: 10,
@@ -297,7 +297,7 @@ const Categories = () => {
                     }}
                   >
                     <Paper
-                      sx={{
+                      style={{
                         p: 1,
                         margin: "auto",
                         maxWidth: 400,
@@ -306,13 +306,13 @@ const Categories = () => {
                       }}
                     >
                       <div style={{}}>
-                        <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        <Box style={{ display: "flex", justifyContent: "center" }}>
                           <Link style={{ textDecoration: "none" }} to="/fan">
                             <img
                               height="90"
-                              style={{ borderRadius: "50%" }}
+                              
                               src="https://img.freepik.com/free-photo/ceiling-fan-decoration-interior-room_74190-8490.jpg"
-                              sx={{
+                              style={{
                                 //  width: 30,
                                 borderRadius: "100%",
                                 height: 10,
@@ -362,7 +362,7 @@ const Categories = () => {
                     }}
                   >
                     <Paper
-                      sx={{
+                      style={{
                         p: 1,
                         margin: "auto",
                         maxWidth: 400,
@@ -371,16 +371,16 @@ const Categories = () => {
                       }}
                     >
                       <div style={{}}>
-                        <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        <Box style={{ display: "flex", justifyContent: "center" }}>
                           <Link
                             style={{ textDecoration: "none" }}
                             to="/multimeter"
                           >
                             <img
                               height="90"
-                              style={{ borderRadius: "50%" }}
+                              
                               src="https://t3.ftcdn.net/jpg/01/86/70/44/360_F_186704450_FgOmsNEU5T5nxVuREZFZ3DK4ywjeRAQX.jpg"
-                              sx={{
+                              style={{
                                 //  width: 30,
                                 borderRadius: "100%",
                                 height: 10,
@@ -430,7 +430,7 @@ const Categories = () => {
                     }}
                   >
                     <Paper
-                      sx={{
+                      style={{
                         p: 1,
                         margin: "auto",
                         maxWidth: 400,
@@ -439,16 +439,16 @@ const Categories = () => {
                       }}
                     >
                       <div style={{}}>
-                        <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        <Box style={{ display: "flex", justifyContent: "center" }}>
                           <Link
                             style={{ textDecoration: "none" }}
                             to="/electric"
                           >
                             <img
                               height="90"
-                              style={{ borderRadius: "50%" }}
+                              
                               src="https://thumbs.dreamstime.com/b/electric-cables-tar-fuse-box-there-lot-electrical-74116773.jpg"
-                              sx={{
+                              style={{
                                 //  width: 30,
                                 borderRadius: "100%",
                                 height: 10,

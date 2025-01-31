@@ -22,6 +22,7 @@ import { BorderVertical } from "@mui/icons-material";
 // import useAuth from '../../../Hook/useAuth';
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../../Hooks/useAuth";
+import { baseUrl } from "../../../../../constants/urls";
 // import useAuth from '../../../Hooks/useAuth';
 const SeeApplyFeedback = () => {
   const [work, setWork] = useState([]);
@@ -36,7 +37,7 @@ const SeeApplyFeedback = () => {
   //   },[])
 
   const fetchData = () => {
-    fetch(`https://black-electrisian.onrender.com/feedback/${user.email}`)
+    fetch(`${baseUrl}/feedback/${user.email}`)
       .then((res) => res.json())
       // .then(data => setWork(data))
       .then((data) => {
@@ -67,7 +68,7 @@ const SeeApplyFeedback = () => {
   };
 
   const handleLike = (id) => {
-    fetch(`https://black-electrisian.onrender.com/like/${id}`, {
+    fetch(`${baseUrl}/like/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(userData),

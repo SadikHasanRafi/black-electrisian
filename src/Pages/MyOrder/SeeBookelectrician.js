@@ -1,82 +1,64 @@
 import React, { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
-// import useAuth from '../../../../hooks/useAuth';
+import { baseUrl } from "../../constants/urls";
 
-const SeeBookelectrician = () => {
+const SeeBookElectrician = () => {
   const [service, setService] = useState([]);
   const { user } = useAuth();
-  const [control, setControl] = useState(false);
-  // const email=user?.email
 
   useEffect(() => {
-    fetch(
-      `https://black-electrisian.onrender.com/mybookElectrician/${user?.email}`,
-    )
+    if (!user?.email) return; // Prevent fetching if user email is undefined
+    fetch(`${baseUrl}/mybookElectrician/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setService(data);
-      });
-  }, [user?.email]);
+      })
+      .catch((err) => console.error("Error fetching data:", err));
+  }, [user?.email, baseUrl]);
 
   const handleDelete = (id) => {
-    const proceed = window.confirm("are you sure, you want to delete");
-    fetch(
-      `https://black-electrisian.onrender.com/electricianmanageAllOrderDelete/${id}`,
-      {
-        method: "DELETE",
-      },
-    )
+    const proceed = window.confirm("Are you sure you want to delete?");
+    if (!proceed) return;
+
+    fetch(`${baseUrl}/electricianmanageAllOrderDelete/${id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
-          alert("Delete");
-          const remaining = service.filter((service) => service._id !== id);
-          setService(remaining);
+          alert("Deleted successfully!");
+          setService((prevService) =>
+            prevService.filter((service) => service._id !== id)
+          );
         }
-      });
-    console.log(id);
+      })
+      .catch((err) => console.error("Error deleting service:", err));
   };
 
-  const designShow = {
-    width: "18rem",
-  };
   return (
     <div>
-      <h1>Booking Client</h1>
+      <h1>Booking Clients</h1>
       <div className="container">
         <div className="row">
           {service?.map((offers) => (
-            <div className="col-lg-6 mb-5 mt-5 col-sm-12 image-card ">
-              <div className="card" style={designShow}>
+            <div key={offers._id} className="col-lg-6 mb-5 mt-5 col-sm-12 image-card">
+              <div className="card" style={{ width: "18rem" }}>
                 <img
-                  className="image-design"
                   src={offers?.img}
-                  className="card-img-top"
-                  alt="..."
+                  className="card-img-top image-design"
+                  alt="Electrician Service"
                 />
                 <div className="card-body body-designs">
                   <h3>Booking User: {offers?.username}</h3>
-                  <h6 className="card-text">
-                    BookingAddress: {offers?.useraddress}.
-                  </h6>
-                  <h6 className=" ">
-                    BookinguserOcupation:{offers?.ocupation}
-                  </h6>
-                  <h6 className=" ">BookinguserPhone:{offers?.userPhone}</h6>
-                  <h6 className="me-5 ">BookingUsercity:{offers?.city}</h6>
-                  <h6 className="me-5">
-                    ElectricianName:{offers?.electricianName}
-                  </h6>
-                  <h6 className="me-5">ElectricianContact:{offers?.contact}</h6>
-                  <h6 className="me-5">ElectricianEmail:{offers?.userEmail}</h6>
-                  <h6 className="bg-danger text-white me-2 p-1 ">
-                    {offers?.positions}
-                  </h6>
-
-                  <button
-                    className="button"
-                    onClick={() => handleDelete(offers?._id)}
-                  >
+                  <h6>Booking Address: {offers?.useraddress}</h6>
+                  <h6>Occupation: {offers?.ocupation}</h6>
+                  <h6>Phone: {offers?.userPhone}</h6>
+                  <h6>City: {offers?.city}</h6>
+                  <h6>Electrician Name: {offers?.electricianName}</h6>
+                  <h6>Contact: {offers?.contact}</h6>
+                  <h6>Email: {offers?.userEmail}</h6>
+                  <h6 className="bg-danger text-white p-1">{offers?.positions}</h6>
+                  <button className="button" onClick={() => handleDelete(offers._id)}>
                     Delete
                   </button>
                 </div>
@@ -89,4 +71,4 @@ const SeeBookelectrician = () => {
   );
 };
 
-export default SeeBookelectrician;
+export default SeeBookElectrician;

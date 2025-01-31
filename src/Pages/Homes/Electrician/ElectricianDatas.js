@@ -21,9 +21,8 @@ const ElectricianDatas = () => {
               </h6>
               {/* <h1>{id}</h1> */}
               <img
-                className="image-design"
+                className="image-design card-img-top"
                 src="https://img.freepik.com/premium-photo/electrical-engineer-measures-voltage-current-power-line-with-tester_271853-1240.jpg?w=2000"
-                className="card-img-top"
                 alt="..."
               />
             </div>
@@ -35,9 +34,9 @@ const ElectricianDatas = () => {
               <h2 className="tittle">Virat Hasan</h2>
               {/* <h1>{id}</h1> */}
               <img
-                className="image-design"
+                className="image-design card-img-top"
                 src="https://img.freepik.com/premium-photo/checking-operating-voltage-levels-solar-panel-switchgear-compartment_179755-13199.jpg"
-                className="card-img-top"
+                
                 alt="..."
               />
             </div>
@@ -49,9 +48,8 @@ const ElectricianDatas = () => {
               <h2 className="tittle">Mikel Hossion</h2>
               {/* <h1>{id}</h1> */}
               <img
-                className="image-design"
+                className="image-design card-img-top"
                 src="https://blogs.stthom.edu/wp-content/uploads/2022/08/BeYourBold_Blog_Engineering-1024x684.jpg"
-                className="card-img-top"
                 alt="..."
               />
             </div>

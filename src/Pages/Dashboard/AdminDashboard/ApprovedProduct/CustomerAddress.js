@@ -13,6 +13,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 // import PendingActionsOutlinedIcon from '@mui/icons-material/PendingActionsOutlined';
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
+import { baseUrl } from "../../../../constants/urls";
 
 const CustomerAddress = ({ order, handleDelete }) => {
   const addressStyle = { display: "flex", justifyContent: "space-between" };
@@ -20,7 +21,7 @@ const CustomerAddress = ({ order, handleDelete }) => {
   const [status, setStatus] = useState("");
 
   const handleUpdate = (id) => {
-    fetch(`https://black-electrisian.onrender.com/updateStatusdata/${id}`, {
+    fetch(`${baseUrl}/updateStatusdata/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status }),

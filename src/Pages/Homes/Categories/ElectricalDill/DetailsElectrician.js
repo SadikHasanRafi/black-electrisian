@@ -28,6 +28,7 @@ import Footer from "../../../Shared/Footer/Footer";
 import { CartContext } from "../../../../contexts/CartContext";
 import Swal from "sweetalert2";
 import useAuth from "../../../../Hooks/useAuth";
+import { baseUrl } from "../../../../constants/urls";
 //   import { alert, ButtonStyle } from "../../Hooks/useStyle";
 
 const labels = {
@@ -56,7 +57,7 @@ const DetailsElectrician = () => {
   const [isFetched, setIsFetched] = useState(0);
 
   useEffect(() => {
-    fetch(`https://black-electrisian.onrender.com/ElectricianDetail/${id}`)
+    fetch(`${baseUrl}/ElectricianDetail/${id}`)
       .then((res) => res.json())
       .then((data) => setBook(data));
   }, [id]);
@@ -72,7 +73,7 @@ const DetailsElectrician = () => {
     console.log(data);
     data.userEmail = user.email;
 
-    fetch("https://black-electrisian.onrender.com/bookElectrician", {
+    fetch(baseUrl+"/bookElectrician", {
       method: "POST",
       headers: {
         "content-type": "application/json",

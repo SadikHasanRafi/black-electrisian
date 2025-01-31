@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../Hooks/useAuth";
+import { baseUrl } from "../../../../constants/urls";
 // import useAuth from '../../../Hooks/useAuth';
 // import Header from '../../../Shared/Header/Header';
 // import {  Form,Col} from "react-bootstrap";
@@ -21,7 +22,7 @@ const BuyerUploadProduct = () => {
     data.likes = [];
     // data.status = 'Pending'
 
-    fetch("https://black-electrisian.onrender.com/PostUploadBuyer", {
+    fetch(baseUrl+"/PostUploadBuyer", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

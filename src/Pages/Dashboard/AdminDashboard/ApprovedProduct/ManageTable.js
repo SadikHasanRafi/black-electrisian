@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { baseUrl } from "../../../../constants/urls";
 
 const ManageTable = (props) => {
   const {
@@ -23,7 +24,7 @@ const ManageTable = (props) => {
   };
 
   const handleUpdate = (id) => {
-    fetch(`https://black-electrisian.onrender.com/QuestionStatusUpdate/${id}`, {
+    fetch(`${baseUrl}/QuestionStatusUpdate/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ statu }),

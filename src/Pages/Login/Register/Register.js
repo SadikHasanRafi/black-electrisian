@@ -162,7 +162,7 @@ const Register = () => {
                       />{" "}
                       <br />
                       <input
-                        styele={{ fontWeight: "500" }}
+                        style={{ fontWeight: "500" }}
                         className="w-75 mb-3"
                         {...register("password", { required: true })}
                         placeholder="6-digit password"

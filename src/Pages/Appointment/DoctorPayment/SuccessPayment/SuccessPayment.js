@@ -18,6 +18,7 @@ import {
 import "./SuccessPayment.css";
 import Header from "../../../Shared/Header/Header";
 import Footer from "../../../Shared/Footer/Footer";
+import { baseUrl } from "../../../../constants/urls";
 
 const SuccessPayment = () => {
   const { id } = useParams();
@@ -26,7 +27,7 @@ const SuccessPayment = () => {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    fetch(`https://black-electrisian.onrender.com/ordersdata/${id}`)
+    fetch(`${baseUrl}/ordersdata/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -41,7 +42,7 @@ const SuccessPayment = () => {
       val_id: product?.val_id,
     };
     axios
-      .post(`https://black-electrisian.onrender.com/validateData`, datas)
+      .post(`${baseUrl}/validateData`, datas)
       .then((res) => {
         console.log(res.data);
         if (res.data) {

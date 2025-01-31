@@ -3,6 +3,7 @@ import { Col, Row, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAuth from "../../../../Hooks/useAuth";
+import { baseUrl } from "../../../../constants/urls";
 
 const Electrician = () => {
   const { user } = useAuth();
@@ -16,7 +17,7 @@ const Electrician = () => {
     data.likes = [];
     // data.status = 'Pending'
 
-    fetch("https://black-electrisian.onrender.com/electricianupload", {
+    fetch(baseUrl+"/electricianupload", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

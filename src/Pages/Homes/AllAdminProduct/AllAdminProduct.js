@@ -35,6 +35,7 @@ import useAuth from "../../../Hooks/useAuth";
 import Header from "../../Shared/Header/Header";
 import SearchBar from "../Categories/SearchBar";
 import Footer from "../../Shared/Footer/Footer";
+import { baseUrl } from "../../../constants/urls";
 // import SearchBar from '../../../ShareeCategories/TaterSharee/SearchBar';
 
 const AllAdminProduct = () => {
@@ -78,7 +79,7 @@ const AllAdminProduct = () => {
   };
   const fetchData = () => {
     fetch(
-      `https://black-electrisian.onrender.com/adminsproducts?page=${page}&&categories=${categories}&&sizing=${sizing}&&warrenty=${warrenty}&&material=${material}&&size=${size}`,
+      `${baseUrl}/adminsproducts?page=${page}&&categories=${categories}&&sizing=${sizing}&&warrenty=${warrenty}&&material=${material}&&size=${size}`,
     )
       .then((res) => res.json())
       .then((data) => {
@@ -94,7 +95,7 @@ const AllAdminProduct = () => {
   }, [categories, page, size, sizing, warrenty, material, size]);
 
   useEffect(() => {
-    fetch("https://black-electrisian.onrender.com/adminsproducts")
+    fetch(baseUrl+"/adminsproducts")
       .then((res) => res.json())
       .then((data) => setModel(data.allData));
   }, []);

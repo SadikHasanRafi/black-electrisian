@@ -9,7 +9,7 @@ const Abouts = () => {
   return (
     <div style={{ background: "black" }}>
       <Header></Header>
-      <Container sx={{ my: 10 }}>
+      <Container style={{ my: 10 }}>
         <Grid container spacing={2}>
           <Grid
             // data-aos="fade-right"
@@ -22,23 +22,21 @@ const Abouts = () => {
             md={6}
           >
             <Typography
-              sx={{ fontStyle: "italic", fontSize: 22, color: "whte" }}
+              style={{ fontStyle: "italic", fontSize: 22, color: "whte" }}
               variant="body1"
               gutterBottom
             ></Typography>
             <Typography
-              sx={{ fontWeight: "500", fontSize: 42, color: "white" }}
+              style={{ fontWeight: "500", fontSize: 42, color: "white" }}
               variant="h4"
               gutterBottom
               component="div"
             ></Typography>
             <h2
               className="text-white"
-              style={{ textAlign: "left" }}
-              sx={{ fontSize: 15, color: "white !important" }}
-              variant="body2"
-              gutterBottom
-            >
+              style={{ textAlign: "left", fontSize: 15, color: "white !important"  }}
+              
+               >
               Electrical equipment means any apparatus, appliance, cable,
               conductor, fitting, insulator, material, meter or wire that is
               used for controlling, generating, supplying, transforming or
@@ -49,7 +47,7 @@ const Abouts = () => {
 
             <br />
             <Typography
-              sx={{ fontSize: 15, color: "white" }}
+              style={{ fontSize: 15, color: "white" }}
               variant="body2"
               gutterBottom
             ></Typography>

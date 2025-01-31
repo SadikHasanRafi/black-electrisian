@@ -22,6 +22,7 @@ import {
 import useAuth from "../../../Hooks/useAuth";
 import { CartContext } from "../../../contexts/CartContext";
 import Swal from "sweetalert2";
+import { baseUrl } from "../../../constants/urls";
 // import useAuth from '../../../Hooks/useAuth';
 const BuyerProducts = () => {
   const [work, setWork] = useState([]);
@@ -52,7 +53,7 @@ const BuyerProducts = () => {
   //   },[])
 
   const fetchData = () => {
-    fetch("https://black-electrisian.onrender.com/ValueUpdates")
+    fetch(baseUrl+"/ValueUpdates")
       .then((res) => res.json())
       // .then(data => setWork(data))
       .then((data) => {

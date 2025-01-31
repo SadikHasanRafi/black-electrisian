@@ -27,6 +27,7 @@ import Header from "../../../Shared/Header/Header";
 import Footer from "../../../Shared/Footer/Footer";
 import { CartContext } from "../../../../contexts/CartContext";
 import Swal from "sweetalert2";
+import { baseUrl } from "../../../../constants/urls";
 //   import { alert, ButtonStyle } from "../../Hooks/useStyle";
 
 const labels = {
@@ -54,7 +55,7 @@ const AdminProductDetails = () => {
   const [isFetched, setIsFetched] = useState(0);
 
   useEffect(() => {
-    fetch(`https://black-electrisian.onrender.com/adminsproduct/${id}`)
+    fetch(`${baseUrl}/adminsproduct/${id}`)
       .then((res) => res.json())
       .then((data) => setBook(data));
   }, [id]);

@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row, Container, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../../Hooks/useAuth";
+import { baseUrl } from "../../../../constants/urls";
 // import useAuth from '../../../Hooks/useAuth';
 // import Header from '../../../Shared/Header/Header';
 // import {  Form,Col} from "react-bootstrap";
@@ -19,7 +20,7 @@ const ApplyVideo = () => {
     data.time = "pending";
     data.code = "pending";
 
-    fetch("https://black-electrisian.onrender.com/videoApply", {
+    fetch(baseUrl+"/videoApply", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
