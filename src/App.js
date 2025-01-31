@@ -58,7 +58,7 @@ import SeeBookelectrician from "./Pages/MyOrder/SeeBookelectrician";
 import BlogRobotics from "./Pages/Dashboard/AdminDashboard/BlogRobotics/BlogRobotics";
 import ShowBlog from "./Pages/Dashboard/AdminDashboard/BlogRobotics/ShowBlog";
 import ContactUs from "./Pages/Homes/Contact/ContactUs/ContactUs";
-import React from "react"
+import React from "react";
 // import SeeBookElectrician from './Pages/MyOrder/SeeBookelectrician';
 
 function App() {
@@ -99,14 +99,8 @@ function App() {
 
                 <Route path="/allAdminProduct" element={<AllAdminProduct />} />
                 <Route path="bookDetails/:id" element={<ProductDetails />} />
-                <Route
-                  path="electricianDetails/:id"
-                  element={<DetailsElectrician />}
-                />
-                <Route
-                  path="adminAllDetails/:id"
-                  element={<AdminProductDetails />}
-                />
+                <Route path="electricianDetails/:id" element={<DetailsElectrician />} />
+                <Route path="adminAllDetails/:id" element={<AdminProductDetails />} />
                 <Route path="Details/:id" element={<DetailsAppointment />} />
                 <Route path="/successdata/:id" element={<SuccessPayment />} />
                 {/* <Route path="/success/:id">
@@ -174,10 +168,7 @@ function App() {
                       // </AdminRoute>
                     }
                   />
-                  <Route
-                    path="productUpload"
-                    element={<BuyerUploadProduct />}
-                  />
+                  <Route path="productUpload" element={<BuyerUploadProduct />} />
                   <Route path="adds" element={<AddProduct />} />
                   <Route
                     path="applyVideos"

@@ -190,7 +190,7 @@ const AllAdminProduct = () => {
                         className="form-check-label fw-bold all text-white me-4 sharee-design"
                         htmlFor="flexCheckDefault"
                       >
-                        Electricdrill
+                        Electric Drill
                       </label>
                     </div>
                     <div className="form-check align-items-center me-5">
@@ -218,7 +218,7 @@ const AllAdminProduct = () => {
                         className="form-check-label fw-bold all me-5 text-white sharee-design"
                         htmlFor="flexCheckDefault"
                       >
-                        ElectricFan
+                        Electric Fan
                       </label>
                     </div>
                     <div className="form-check align-items-center me-5">
@@ -246,7 +246,7 @@ const AllAdminProduct = () => {
                         className="form-check-label fw-bold all me-5 text-white sharee-design"
                         htmlFor="flexCheckDefault"
                       >
-                        ElectricTar
+                        Electric Wire
                       </label>
                     </div>
                     <div className="form-check align-items-center me-3">
@@ -260,10 +260,10 @@ const AllAdminProduct = () => {
                         className="form-check-label fw-bold all me-4 text-white sharee-design"
                         htmlFor="flexCheckDefault"
                       >
-                        VoltageTester
+                        Voltage Tester
                       </label>
                     </div>
-                    <div className="form-check align-items-center me-5">
+                    {/* <div className="form-check align-items-center me-5">
                       <input
                         className="form-check-input mt-1"
                         type="checkbox"
@@ -276,7 +276,7 @@ const AllAdminProduct = () => {
                       >
                         Robotics
                       </label>
-                    </div>
+                    </div> */}
                   </div>
                 </form>
                 {/* <hr className='text-white'></hr> */}

@@ -49,11 +49,11 @@ const Header = () => {
 
                 <Dropdown.Menu className="drop-menu">
                   {/* start  */}
+                  <Dropdown.Item className="down-color" href="/all-categories">
+                    All Categories
+                  </Dropdown.Item>
                   <Dropdown.Item className="down-color" href="/light">
                     Light
-                  </Dropdown.Item>
-                  <Dropdown.Item className="down-color" href="/all-categories">
-                    all-categories
                   </Dropdown.Item>
                   <Dropdown.Item className="down-color" href="/Multimeter">
                     Multimeter
@@ -64,9 +64,9 @@ const Header = () => {
                   <Dropdown.Item className="down-color" href="/fan">
                     Fan
                   </Dropdown.Item>
-                  <Dropdown.Item className="down-color" href="/robotics">
+                  {/* <Dropdown.Item className="down-color" href="/robotics">
                     Robotics
-                  </Dropdown.Item>
+                  </Dropdown.Item> */}
                 </Dropdown.Menu>
               </Dropdown>
               {/* </Nav> */}
@@ -95,16 +95,16 @@ const Header = () => {
                 About
               </Nav.Link>
               {/* <Nav.Link as={NavLink} to="/appointment" className='menu-item'>Appointment</Nav.Link> */}
-              <Nav.Link
+              {/* <Nav.Link
                 as={NavLink}
                 to="/showElectrician"
                 className="menu-item"
               >
                 Electrician
-              </Nav.Link>
-              <Nav.Link as={NavLink} to="/showBlogs" className="menu-item">
+              </Nav.Link> */}
+              {/* <Nav.Link as={NavLink} to="/showBlogs" className="menu-item">
                 ShowBlogs
-              </Nav.Link>
+              </Nav.Link> */}
 
               <Nav.Link as={NavLink} to="/contact" className="menu-item">
                 Contact

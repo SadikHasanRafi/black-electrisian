@@ -4,18 +4,7 @@ import { NavLink } from "react-router-dom";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 
-import {
-  Box,
-  Button,
-  CardMedia,
-  Container,
-  Grid,
-  Pagination,
-  Paper,
-  Rating,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Button, CardMedia, Container, Grid, Pagination, Paper, Rating, Stack, Typography } from "@mui/material";
 
 // import { CartContext } from '../../../Context/CartContext';
 import "./AllCategories.css";
@@ -69,9 +58,7 @@ const AllCategories = () => {
     setPage(data.selected);
   };
   const fetchData = () => {
-    fetch(
-      `${baseUrl}/products?page=${page}&&categories=${categories}&&sizing=${sizing}&&warrenty=${warrenty}&&material=${material}&&size=${size}`,
-    )
+    fetch(`${baseUrl}/products?page=${page}&&categories=${categories}&&sizing=${sizing}&&warrenty=${warrenty}&&material=${material}&&size=${size}`)
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.allData);
@@ -86,16 +73,14 @@ const AllCategories = () => {
   }, [categories, page, size, sizing, warrenty, material, size]);
 
   useEffect(() => {
-    fetch(baseUrl+"/products")
+    fetch(baseUrl + "/products")
       .then((res) => res.json())
       .then((data) => setModel(data.allData));
   }, []);
 
   const handleValue = (e) => {
     e.preventDefault();
-    const newValue = model?.filter((ques) =>
-      ques?.productName?.toLocaleLowerCase()?.includes(searchValue),
-    );
+    const newValue = model?.filter((ques) => ques?.productName?.toLocaleLowerCase()?.includes(searchValue));
 
     setModel(newValue);
     // console.log(newValue)
@@ -104,12 +89,9 @@ const AllCategories = () => {
   const handleOnChange = (e) => {
     e.preventDefault();
     const values = e.target.value;
-    const newValue = questions?.filter((ques) =>
-      ques?.productName?.toLowerCase()?.includes(values.toLowerCase()),
-    );
+    const newValue = questions?.filter((ques) => ques?.productName?.toLowerCase()?.includes(values.toLowerCase()));
     // console.log(values)
-    newValue.length === 0 &&
-      alert("warning", "Warning...", "Not Found Your Result");
+    newValue.length === 0 && alert("warning", "Warning...", "Not Found Your Result");
     setModel(newValue);
   };
 
@@ -147,10 +129,7 @@ const AllCategories = () => {
             {/* <div className="col">
                     
                 </div> */}
-            <SearchBar
-              handleOnChange={handleOnChange}
-              placeholder={placeholder}
-            />
+            <SearchBar handleOnChange={handleOnChange} placeholder={placeholder} />
           </div>
           {/* {questions.length ? */}
           <div className="row g-4">
@@ -161,109 +140,50 @@ const AllCategories = () => {
                           model.map((models)=>( */}
                   {/* <div> */}
                   <div className="brands mt-3">
-                    <h5
-                      style={{ fontWeight: "700" }}
-                      className="text-black texts-design main-parts"
-                    >
+                    <h5 style={{ fontWeight: "700" }} className="text-black texts-design main-parts">
                       Brand
                     </h5>
                     <div className="form-check align-items-center me-3">
-                      <input
-                        className="form-check-input mt-2"
-                        type="checkbox"
-                        value="electricdrill"
-                        id="flexCheckDefault"
-                      />
-                      <label
-                        className="form-check-label fw-bold all text-black me-4 sharee-design"
-                        htmlFor="flexCheckDefault"
-                      >
-                        Electricdrill
+                      <input className="form-check-input mt-2" type="checkbox" value="electricdrill" id="flexCheckDefault" />
+                      <label className="form-check-label fw-bold all text-black me-4 sharee-design" htmlFor="flexCheckDefault">
+                        Electric Drill
                       </label>
                     </div>
                     <div className="form-check align-items-center me-5">
-                      <input
-                        className="form-check-input mt-1"
-                        type="checkbox"
-                        value="light"
-                        id="flexCheckDefault"
-                      />
-                      <label
-                        className="form-check-label fw-bold all me-5  text-black sharee-design"
-                        htmlFor="flexCheckDefault"
-                      >
+                      <input className="form-check-input mt-1" type="checkbox" value="light" id="flexCheckDefault" />
+                      <label className="form-check-label fw-bold all me-5  text-black sharee-design" htmlFor="flexCheckDefault">
                         Light
                       </label>
                     </div>
                     <div className="form-check align-items-center me-5">
-                      <input
-                        className="form-check-input mt-1"
-                        type="checkbox"
-                        value="fan"
-                        id="flexCheckDefault"
-                      />
-                      <label
-                        className="form-check-label fw-bold all me-5 text-black sharee-design"
-                        htmlFor="flexCheckDefault"
-                      >
+                      <input className="form-check-input mt-1" type="checkbox" value="fan" id="flexCheckDefault" />
+                      <label className="form-check-label fw-bold all me-5 text-black sharee-design" htmlFor="flexCheckDefault">
                         ElectricFan
                       </label>
                     </div>
                     <div className="form-check align-items-center me-5">
-                      <input
-                        className="form-check-input mt-1"
-                        type="checkbox"
-                        value="multimeter"
-                        id="flexCheckDefault"
-                      />
-                      <label
-                        className="form-check-label fw-bold all me-5 text-black sharee-design"
-                        htmlFor="flexCheckDefault"
-                      >
+                      <input className="form-check-input mt-1" type="checkbox" value="multimeter" id="flexCheckDefault" />
+                      <label className="form-check-label fw-bold all me-5 text-black sharee-design" htmlFor="flexCheckDefault">
                         Multimeter
                       </label>
                     </div>
                     <div className="form-check align-items-center me-5">
-                      <input
-                        className="form-check-input mt-1"
-                        type="checkbox"
-                        value="ElectricTar"
-                        id="flexCheckDefault"
-                      />
-                      <label
-                        className="form-check-label fw-bold all me-5 text-black sharee-design"
-                        htmlFor="flexCheckDefault"
-                      >
+                      <input className="form-check-input mt-1" type="checkbox" value="ElectricTar" id="flexCheckDefault" />
+                      <label className="form-check-label fw-bold all me-5 text-black sharee-design" htmlFor="flexCheckDefault">
                         ElectricTar
                       </label>
                     </div>
                     <div className="form-check align-items-center me-3">
-                      <input
-                        className="form-check-input mt-2"
-                        type="checkbox"
-                        value="tester"
-                        id="flexCheckDefault"
-                      />
-                      <label
-                        className="form-check-label fw-bold all me-4 text-black sharee-design"
-                        htmlFor="flexCheckDefault"
-                      >
+                      <input className="form-check-input mt-2" type="checkbox" value="tester" id="flexCheckDefault" />
+                      <label className="form-check-label fw-bold all me-4 text-black sharee-design" htmlFor="flexCheckDefault">
                         VoltageTester
                       </label>
                     </div>
                     <div className="form-check align-items-center me-5">
-                      <input
-                        className="form-check-input mt-1"
-                        type="checkbox"
-                        value="robotics"
-                        id="flexCheckDefault"
-                      />
-                      <label
-                        className="form-check-label fw-bold all me-5 text-black sharee-design"
-                        htmlFor="flexCheckDefault"
-                      >
+                      <input className="form-check-input mt-1" type="checkbox" value="robotics" id="flexCheckDefault" />
+                      {/* <label className="form-check-label fw-bold all me-5 text-black sharee-design" htmlFor="flexCheckDefault">
                         Robotics
-                      </label>
+                      </label> */}
                     </div>
                   </div>
                 </form>
@@ -272,23 +192,11 @@ const AllCategories = () => {
             </div>
             <div className="col-12 col-md-10">
               <div className="">
-                <Grid
-                  container
-                  spacing={2}
-                  sx={{ mt: 6 }}
-                  columns={{ xs: 4, sm: 8, md: 12 }}
-                >
+                <Grid container spacing={2} sx={{ mt: 6 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                   {questions.length === 0
                     ? loading
                     : model?.map((single) => (
-                        <Grid
-                          sx={{ py: 3 }}
-                          key={single._id}
-                          item
-                          xs={4}
-                          sm={4}
-                          md={4}
-                        >
+                        <Grid sx={{ py: 3 }} key={single._id} item xs={4} sm={4} md={4}>
                           <Paper
                             sx={{
                               p: 1,
@@ -298,50 +206,27 @@ const AllCategories = () => {
                               boxShadow: "0px 14px 22px rgb(42 135 158 / 50%)",
                             }}
                           >
-                            <Grid
-                              container
-                              spacing={2}
-                              columns={{ xs: 4, sm: 8, md: 4 }}
-                            >
+                            <Grid container spacing={2} columns={{ xs: 4, sm: 8, md: 4 }}>
                               <Grid item xs={12} sm={12} md={12}>
                                 <div className="photo">
                                   <div className="photoShops photoalbums">
-                                    <img
-                                      height="230"
-                                      width="280"
-                                      style={{ borderRadius: "10px" }}
-                                      src={single?.img}
-                                    ></img>
+                                    <img height="230" width="280" style={{ borderRadius: "10px" }} src={single?.img}></img>
                                   </div>
                                 </div>
                               </Grid>
                               <Grid item xs={2} sm={4} md={8} pl={2} my={3}>
                                 <Box style={{ textAlign: "left" }}>
-                                  <h5 style={{ fontWeight: "700" }}>
-                                    Name : {single?.productName}
-                                  </h5>
+                                  <h5 style={{ fontWeight: "700" }}>Name : {single?.productName}</h5>
 
                                   <Typography variant="body">
-                                    <h5 style={{ fontWeight: 700 }}>
-                                      {" "}
-                                      price : TK.{single?.ProductPrice}
-                                    </h5>
+                                    <h5 style={{ fontWeight: 700 }}> price : TK.{single?.ProductPrice}</h5>
                                   </Typography>
 
                                   <Typography variant="body">
-                                    <span style={{ fontWeight: 700 }}>
-                                      {" "}
-                                      Brand : {single?.categories}
-                                    </span>
+                                    <span style={{ fontWeight: 700 }}> Brand : {single?.categories}</span>
                                   </Typography>
                                   <br />
-                                  <Rating
-                                    name="half-rating-read"
-                                    style={{ color: "#D0425C" }}
-                                    defaultValue={single?.rating}
-                                    precision={0.5}
-                                    readOnly
-                                  />
+                                  <Rating name="half-rating-read" style={{ color: "#D0425C" }} defaultValue={single?.rating} precision={0.5} readOnly />
 
                                   <Box style={{ display: "flex" }}></Box>
                                 </Box>
@@ -355,11 +240,7 @@ const AllCategories = () => {
                                   textAlign: "left",
                                 }}
                               >
-                                <Button
-                                  className="btn-style download-btn "
-                                  style={{ textAlign: "left" }}
-                                  size="small"
-                                >
+                                <Button className="btn-style download-btn " style={{ textAlign: "left" }} size="small">
                                   Check
                                 </Button>
                               </NavLink>
@@ -371,11 +252,7 @@ const AllCategories = () => {
                                   marginRight: "4px",
                                 }}
                               >
-                                <Button
-                                  className="btn-style download-btn details-show ms-4 partdetsils"
-                                  style={{ padding: "5px" }}
-                                  size="small"
-                                >
+                                <Button className="btn-style download-btn details-show ms-4 partdetsils" style={{ padding: "5px" }} size="small">
                                   Details
                                 </Button>
                               </NavLink>
@@ -398,23 +275,7 @@ const AllCategories = () => {
 
             <div className="d-flex mt-5">
               <div className="mx-auto">
-                <ReactPaginate
-                  previousLabel={"previous"}
-                  nextLabel={"next"}
-                  breakLabel={"..."}
-                  marginPagesDisplayed={1}
-                  pageRangeDisplayed={1}
-                  pageCount={pageCount}
-                  onPageChange={handlePageChange}
-                  containerClassName="pagination"
-                  pageClassName="page-item"
-                  pageLinkClassName="page-link"
-                  previousClassName="page-link"
-                  nextClassName="page-link"
-                  breakClassName="page-item"
-                  breakLinkClassName="page-link"
-                  activeClassName="active"
-                />
+                <ReactPaginate previousLabel={"previous"} nextLabel={"next"} breakLabel={"..."} marginPagesDisplayed={1} pageRangeDisplayed={1} pageCount={pageCount} onPageChange={handlePageChange} containerClassName="pagination" pageClassName="page-item" pageLinkClassName="page-link" previousClassName="page-link" nextClassName="page-link" breakClassName="page-item" breakLinkClassName="page-link" activeClassName="active" />
               </div>
             </div>
           </div>
