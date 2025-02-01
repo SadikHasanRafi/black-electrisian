@@ -58,15 +58,25 @@ const AllCategories = () => {
     setPage(data.selected);
   };
   const fetchData = () => {
-    fetch(`${baseUrl}/products?page=${page}&&categories=${categories}&&sizing=${sizing}&&warrenty=${warrenty}&&material=${material}&&size=${size}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setQuestions(data.allData);
-        setModel(data.allData);
-        const count = data.count;
-        const pageNumber = Math.ceil(count / size);
-        setPageCount(pageNumber);
-      });
+    fetch(`${baseUrl}/products?page=${page}&&categories=${categories}&&sizing=${sizing}&&size=${size}`)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return res.json();
+    })
+    .then((data) => {
+      setQuestions(data.allData);
+      setModel(data.allData);
+      const count = data.count;
+      const pageNumber = Math.ceil(count / size);
+      setPageCount(pageNumber);
+    })
+    .catch((error) => {
+      console.error('There was a problem with the fetch operation:', error);
+      // Optionally show an error message to the user
+    });
+  
   };
   useEffect(() => {
     fetchData();
@@ -180,7 +190,7 @@ const AllCategories = () => {
                       </label>
                     </div>
                     <div className="form-check align-items-center me-5">
-                      <input className="form-check-input mt-1" type="checkbox" value="robotics" id="flexCheckDefault" />
+                      {/* <input className="form-check-input mt-1" type="checkbox" value="robotics" id="flexCheckDefault" /> */}
                       {/* <label className="form-check-label fw-bold all me-5 text-black sharee-design" htmlFor="flexCheckDefault">
                         Robotics
                       </label> */}
