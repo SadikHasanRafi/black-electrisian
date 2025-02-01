@@ -36,7 +36,7 @@ const OrderReview = () => {
       console.log("🚀 ~ OrderReview ~ user:",user.email )
     }
 
-    // return navigate("/payment");
+    return navigate("/payment");
   };
 
   return (
@@ -146,6 +146,9 @@ const OrderReview = () => {
                   backgroundColor: "#032831",
                   color: "white",
                   marginRight: "10px",
+                  '&:hover': {
+                    backgroundColor: "#032831", // Prevent hover change
+                  },
                 }}
               >
                 Order Now
