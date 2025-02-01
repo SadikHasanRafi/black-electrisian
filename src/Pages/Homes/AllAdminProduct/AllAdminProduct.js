@@ -69,11 +69,11 @@ const AllAdminProduct = () => {
   const [warrenty, setwarrenty] = useState("");
   const [material, setmaterial] = useState("");
   const [searchValue, setSearchValue] = useState("");
-
+  
   const [page, setPage] = useState(0);
   const [pageCount, setPageCount] = useState(0);
   const size = 10;
-
+  
   const handlePageChange = (data) => {
     setPage(data.selected);
   };
@@ -106,6 +106,20 @@ const AllAdminProduct = () => {
       ques?.productName?.toLocaleLowerCase()?.includes(searchValue),
     );
     setModel(newValue);
+  };
+
+
+
+  const [selectedCategories, setSelectedCategories] = useState([]);
+
+  const handleCheckboxChange = (event) => {
+    const { value, checked } = event.target;
+
+    setSelectedCategories((prevCategories) =>
+      checked
+        ? [...prevCategories, value] // Add category if checked
+        : prevCategories.filter((category) => category !== value) // Remove if unchecked
+    );
   };
 
   const handleSearch = (e) => {

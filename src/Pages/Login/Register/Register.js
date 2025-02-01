@@ -27,6 +27,8 @@ import Fade from "@mui/material/Fade";
 import { Box } from "@mui/system";
 const Register = () => {
   const { registerUser, loginWithGoogle, authError } = useAuth();
+
+
   const [opens, setOpens] = React.useState(false);
   const handleOpens = () => setOpens(true);
   // const handleClose = () => setOpen(false);
@@ -57,6 +59,8 @@ const Register = () => {
   };
 
   const { register, handleSubmit } = useForm();
+ 
+ 
   const onSubmit = (data) => {
     // console.log(data)
     if (data.password !== data.password2) {
@@ -68,10 +72,10 @@ const Register = () => {
       data.email,
       data.password,
       data.name,
-      data.client,
+      data.client = "buyer",
       data.profession,
       data.choose,
-      data.address,
+      data.address, 
       data.phone,
       location,
       navigate,
@@ -177,12 +181,12 @@ const Register = () => {
                         type="password"
                       />{" "}
                       <br />
-                      <input
+                      {/* <input
                         style={{ fontWeight: "500" }}
                         className="w-75 mb-3"
                         {...register("client", { required: true })}
                         placeholder="Buyer / User"
-                      />{" "}
+                      />{" "} */}
                       <br />
                       {/* <Form.Group as={Col} controlId="formGridRating"        style={{marginLeft:"74px",marginRight:"74px", borderRadius:"15px",color:"black"}}>
                                         

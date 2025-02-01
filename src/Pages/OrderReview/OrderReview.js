@@ -14,12 +14,14 @@ import Cart from "../../ComponentCart/Cart";
 import { CartContext } from "../../contexts/CartContext";
 import Footer from "../Shared/Footer/Footer";
 import Header from "../Shared/Header/Header";
+import useFirebase from "../../Hooks/useFirebase";
 // import Cart from '../../Components/Cart';
 // import { CartContext } from '../../Context/CartContext';
 
 const OrderReview = () => {
   const [cart, setCart] = useContext(CartContext);
   let navigate = useNavigate();
+  const { user } = useFirebase()
 
   const handleRemoveToCart = (id) => {
     const getDb = localStorage.getItem("productCart");
@@ -30,7 +32,11 @@ const OrderReview = () => {
   };
 
   const handlePaymentGoToPage = () => {
-    return navigate("/payment");
+    if (user.email) {
+      console.log("🚀 ~ OrderReview ~ user:",user.email )
+    }
+
+    // return navigate("/payment");
   };
 
   return (

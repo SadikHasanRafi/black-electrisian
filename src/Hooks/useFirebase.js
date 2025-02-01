@@ -1,13 +1,4 @@
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  signOut,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 import { useEffect, useState } from "react";
 import initial from "../Pages/Firebase/firebase.init";
@@ -33,56 +24,26 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
 
   //   register email and password
-  const registerUser = (
-    email,
-    password,
-    name,
-    client,
-    profession,
-    choose,
-    address,
-    phone,
-    location,
-    navigate,
-  ) => {
-    // sendUser(email)
-    setIsLoading(true);
-    createUserWithEmailAndPassword(
-      auth,
+  const registerUser = (email, password, name, client, profession, choose, address, phone, location, navigate) => {
+    const newUser = {
       email,
-      password,
+      displayName: name,
       client,
       profession,
       choose,
       address,
       phone,
-    )
+    };
+    // sendUser(email)
+    setIsLoading(true);
+    createUserWithEmailAndPassword(auth, email, password, client, profession, choose, address, phone)
       .then((userCredential) => {
         // const destination = location?.state?.from || '/'
         // navigate(destination)
         setError("");
-
-        const newUser = {
-          email,
-          displayName: name,
-          client,
-          profession,
-          choose,
-          address,
-          phone,
-        };
         setUser(newUser);
         // save use to database
-        sendUser(
-          email,
-          name,
-          client,
-          profession,
-          choose,
-          address,
-          phone,
-          "POST",
-        );
+        sendUser(email, name, client, profession, choose, address, phone, "POST");
         // send name to firebase after creation
         updateProfile(auth.currentUser, {
           displayName: name,
@@ -94,6 +55,7 @@ const useFirebase = () => {
         navigate(destination);
       })
       .catch((error) => {
+        console.error("🚀 ~ registerUser ~ error:", error)
         // setError(error.message);
         setAuthError(error.message);
       })
@@ -148,16 +110,7 @@ const useFirebase = () => {
   };
 
   // save user to database
-  const sendUser = (
-    email,
-    displayName,
-    client,
-    profession,
-    choose,
-    address,
-    phone,
-    method,
-  ) => {
+  const sendUser = (email, displayName, client, profession, choose, address, phone, method) => {
     const user = {
       email,
       displayName,
@@ -167,7 +120,8 @@ const useFirebase = () => {
       address,
       phone,
     };
-    fetch(baseUrl+"/users", {
+    // console.log("🚀 ~ sendUser ~ user:", user)
+    fetch(baseUrl + "/users", {
       method: method,
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),
