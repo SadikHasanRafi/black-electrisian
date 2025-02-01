@@ -58,7 +58,7 @@ const AllCategories = () => {
     setPage(data.selected);
   };
   const fetchData = () => {
-    fetch(`${baseUrl}/products?page=${page}&&categories=${categories}&&sizing=${sizing}&&size=${size}`)
+    fetch(`${baseUrl}/adminsproducts?page=${page}&&categories=${categories}&&sizing=${sizing}&&size=${size}`)
     .then((res) => {
       if (!res.ok) {
         throw new Error('Network response was not ok');

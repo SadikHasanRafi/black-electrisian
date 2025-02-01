@@ -215,14 +215,14 @@ function NewDashboard(props) {
                 My Order
               </ListItem>
             </NavLink>
-            <NavLink to="/dashboard/seeBooks" style={LinkStyle}>
+            {/* <NavLink to="/dashboard/seeBooks" style={LinkStyle}>
               <ListItem button>
                 <ListItemIcon style={{ color: "white" }}>
                   <AddShoppingCartIcon />
                 </ListItemIcon>
                 Book Electrician
               </ListItem>
-            </NavLink>
+            </NavLink> */}
             {/* <NavLink to='/dashboard/productUpload' style={LinkStyle}>
                             <ListItem button >
                                 <ListItemIcon style={{color:"white"}}>
@@ -233,14 +233,14 @@ function NewDashboard(props) {
                         </NavLink> */}
             <Divider />
 
-            <NavLink to="/dashboard/Electricians" style={LinkStyle}>
+            {/* <NavLink to="/dashboard/Electricians" style={LinkStyle}>
               <ListItem button>
                 <ListItemIcon style={{ color: "white" }}>
                   <HomeIcon />
                 </ListItemIcon>
                 Electrician
               </ListItem>
-            </NavLink>
+            </NavLink> */}
             <Divider />
             {/* <NavLink to='/dashboard/seeApplyVideo' style={LinkStyle}>
                     <ListItem button >

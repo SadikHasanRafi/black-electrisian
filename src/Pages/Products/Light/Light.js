@@ -71,7 +71,7 @@ const Light = () => {
   const userData = { email: user.email, name: user.displayName };
 
   const fetchData = () => {
-    fetch(baseUrl+"/products")
+    fetch(baseUrl+"/adminsproducts")
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.allData);
